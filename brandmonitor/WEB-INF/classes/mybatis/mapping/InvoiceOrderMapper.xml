@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.trademark.dao.InvoiceOrderMapper" >
+  <resultMap id="BaseResultMap" type="com.trademark.pojo.InvoiceOrder" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="invoice_id" property="invoiceId" jdbcType="INTEGER" />
+    <result column="order_id" property="orderId" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="creation_time" property="creationTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, invoice_id, order_id, status, creation_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from k_invoice_order
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from k_invoice_order
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.trademark.pojo.InvoiceOrder" >
+    insert into k_invoice_order (id, invoice_id, order_id, 
+      status, creation_time)
+    values (#{id,jdbcType=INTEGER}, #{invoiceId,jdbcType=INTEGER}, #{orderId,jdbcType=INTEGER}, 
+      #{status,jdbcType=INTEGER}, #{creationTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.trademark.pojo.InvoiceOrder" >
+ 
+    insert into k_invoice_order
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="invoiceId != null" >
+        invoice_id,
+      </if>
+      <if test="orderId != null" >
+        order_id,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="creationTime != null" >
+        creation_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="invoiceId != null" >
+        #{invoiceId,jdbcType=INTEGER},
+      </if>
+      <if test="orderId != null" >
+        #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="creationTime != null" >
+        #{creationTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.trademark.pojo.InvoiceOrder" >
+    update k_invoice_order
+    <set >
+      <if test="invoiceId != null" >
+        invoice_id = #{invoiceId,jdbcType=INTEGER},
+      </if>
+      <if test="orderId != null" >
+        order_id = #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="creationTime != null" >
+        creation_time = #{creationTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.trademark.pojo.InvoiceOrder" >
+    update k_invoice_order
+    set invoice_id = #{invoiceId,jdbcType=INTEGER},
+      order_id = #{orderId,jdbcType=INTEGER},
+      status = #{status,jdbcType=INTEGER},
+      creation_time = #{creationTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="queryAll" resultMap="BaseResultMap" parameterType="com.trademark.pojo.InvoiceOrder" >
+    select * from  k_invoice_order where 1=1
+    <if test="id!=null and id!=0">
+      and id=#{id}
+    </if>
+    <if test="invoiceId!=null and invoiceId!=0">
+      and invoiceId=#{invoiceId}
+    </if>
+    <if test="orderId!=null and orderId!=0">
+     and order_id=#{orderId}
+    </if>
+    <if test="status!=null">
+     status=#{status}
+    </if>
+    order by 
+	create_time desc
+  </select>
+</mapper>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.trademark.dao.TrademarkQueryCatalogMapper" >
+  <resultMap id="BaseResultMap" type="com.trademark.pojo.TrademarkQueryCatalog" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="is_invalid" property="isInvalid" jdbcType="BIT" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="register_no" property="registerNo" jdbcType="VARCHAR" />
+    <result column="classify" property="classify" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="proposer" property="proposer" jdbcType="VARCHAR" />
+    <result column="flag" property="flag" jdbcType="BIT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, is_invalid, create_time, register_no, classify, name, proposer, flag
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from k_trademark_query_catalog
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from k_trademark_query_catalog
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.trademark.pojo.TrademarkQueryCatalog" >
+    insert into k_trademark_query_catalog (id, is_invalid, create_time, 
+      register_no, classify, name, 
+      proposer, flag)
+    values (#{id,jdbcType=INTEGER}, #{isInvalid,jdbcType=BIT}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{registerNo,jdbcType=VARCHAR}, #{classify,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, 
+      #{proposer,jdbcType=VARCHAR}, #{flag,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.trademark.pojo.TrademarkQueryCatalog" >
+    insert into k_trademark_query_catalog
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="isInvalid != null" >
+        is_invalid,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="registerNo != null" >
+        register_no,
+      </if>
+      <if test="classify != null" >
+        classify,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="proposer != null" >
+        proposer,
+      </if>
+      <if test="flag != null" >
+        flag,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="isInvalid != null" >
+        #{isInvalid,jdbcType=BIT},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="registerNo != null" >
+        #{registerNo,jdbcType=VARCHAR},
+      </if>
+      <if test="classify != null" >
+        #{classify,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="proposer != null" >
+        #{proposer,jdbcType=VARCHAR},
+      </if>
+      <if test="flag != null" >
+        #{flag,jdbcType=BIT},
+      </if>
+    </trim>
+      ON DUPLICATE KEY UPDATE 
+   	<trim prefix="" suffix="" suffixOverrides="," >
+	  <if test="registerNo != null" >
+    	register_no = VALUES(register_no),
+      </if>
+      <if test="classify != null" >
+      	classify = VALUES(classify),
+      </if>
+      <if test="name != null" >
+      	name = VALUES(name),
+      </if>
+      <if test="proposer != null" >
+        proposer = VALUES(proposer),
+      </if>
+      <if test="flag != null" >
+      	flag = VALUES(flag),
+      </if>
+     </trim>
+  </insert>
+  
+  
+  <update id="updateByPrimaryKeySelective" parameterType="com.trademark.pojo.TrademarkQueryCatalog" >
+    update k_trademark_query_catalog
+    <set >
+      <if test="isInvalid != null" >
+        is_invalid = #{isInvalid,jdbcType=BIT},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="registerNo != null" >
+        register_no = #{registerNo,jdbcType=VARCHAR},
+      </if>
+      <if test="classify != null" >
+        classify = #{classify,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="proposer != null" >
+        proposer = #{proposer,jdbcType=VARCHAR},
+      </if>
+      <if test="flag != null" >
+        flag = #{flag,jdbcType=BIT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  
+  <select id="selectByAll" resultMap="BaseResultMap" parameterType="com.trademark.pojo.TrademarkQueryCatalog" >
+    select 
+    <include refid="Base_Column_List" />
+    from k_trademark_query_catalog
+    <where>
+      1 = 1
+      <if test="id != null" >
+       and id = #{id,jdbcType=INTEGER}
+      </if>
+   	  <if test="isInvalid != null" >
+       and is_invalid = #{isInvalid,jdbcType=BIT}
+      </if>
+      <if test="createTime != null" >
+       and create_time = #{createTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="registerNo != null" >
+       and register_no = #{registerNo,jdbcType=VARCHAR}
+      </if>
+      <if test="classify != null" >
+       and classify = #{classify,jdbcType=INTEGER}
+      </if>
+      <if test="name != null" >
+       and name = #{name,jdbcType=VARCHAR}
+      </if>
+      <if test="proposer != null" >
+       and proposer = #{proposer,jdbcType=VARCHAR}
+      </if>
+      <if test="flag != null" >
+       and flag = #{flag,jdbcType=BIT}
+      </if>
+     </where>
+     limit #{start},#{end}
+  </select>
+  
+  <update id="updateByPrimaryKey" parameterType="com.trademark.pojo.TrademarkQueryCatalog" >
+    update k_trademark_query_catalog
+    set is_invalid = #{isInvalid,jdbcType=BIT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      register_no = #{registerNo,jdbcType=VARCHAR},
+      classify = #{classify,jdbcType=INTEGER},
+      name = #{name,jdbcType=VARCHAR},
+      proposer = #{proposer,jdbcType=VARCHAR},
+      flag = #{flag,jdbcType=BIT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

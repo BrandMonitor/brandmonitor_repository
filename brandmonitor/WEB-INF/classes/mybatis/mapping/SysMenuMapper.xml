@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.trademark.dao.SysMenuMapper" >
+  <resultMap id="BaseResultMap" type="com.trademark.pojo.SysMenu" >
+    <id column="menuId" property="menuId" jdbcType="INTEGER" />
+    <result column="code" property="code" jdbcType="VARCHAR" />
+    <result column="p_code" property="pCode" jdbcType="VARCHAR" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="comment" property="comment" jdbcType="VARCHAR" />
+    <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="icon" property="icon" jdbcType="VARCHAR" />
+    <result column="url" property="url" jdbcType="VARCHAR" />
+    <result column="seat" property="seat" jdbcType="INTEGER" />
+    <!-- <result column="treepath" property="treepath" jdbcType="VARCHAR" /> -->
+  </resultMap>
+  <sql id="Base_Column_List" >
+    menuId,
+	code,
+	p_code,
+	title,
+	comment,
+	create_date,
+	icon,
+	url,
+	seat
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from k_sys_menu
+    where menu_id = #{menuId,jdbcType=INTEGER}
+  </select>
+  <select id="selectByUserMenu" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    SELECT
+	    m.*
+	FROM
+		k_sys_menu m,
+		k_role_menu rm,
+		k_role r,
+		k_user_role ur
+	WHERE
+		m.menuId = rm.menu_id
+	AND r.id = rm.role_id
+	AND r.id = ur.role_id
+	and ur.user_id = #{userId,jdbcType=INTEGER}
+  </select>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from k_sys_menu
+    where menu_id = #{menuId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.trademark.pojo.SysMenu" >
+    insert into k_sys_menu (menu_id, code, pcode, 
+      title, show_name, create_date, 
+      icon, url, seat, treepath
+      )
+    values (#{menuId,jdbcType=INTEGER}, #{code,jdbcType=VARCHAR}, #{pcode,jdbcType=VARCHAR}, 
+      #{title,jdbcType=VARCHAR}, #{showName,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP}, 
+      #{icon,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, #{seat,jdbcType=INTEGER}, #{treepath,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.trademark.pojo.SysMenu" >
+    insert into k_sys_menu
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="menuId != null" >
+        menu_id,
+      </if>
+      <if test="code != null" >
+        code,
+      </if>
+      <if test="pcode != null" >
+        pcode,
+      </if>
+      <if test="title != null" >
+        title,
+      </if>
+      <if test="showName != null" >
+        show_name,
+      </if>
+      <if test="createDate != null" >
+        create_date,
+      </if>
+      <if test="icon != null" >
+        icon,
+      </if>
+      <if test="url != null" >
+        url,
+      </if>
+      <if test="seat != null" >
+        seat,
+      </if>
+      <if test="treepath != null" >
+        treepath,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="menuId != null" >
+        #{menuId,jdbcType=INTEGER},
+      </if>
+      <if test="code != null" >
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="pcode != null" >
+        #{pcode,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="showName != null" >
+        #{showName,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="icon != null" >
+        #{icon,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null" >
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="seat != null" >
+        #{seat,jdbcType=INTEGER},
+      </if>
+      <if test="treepath != null" >
+        #{treepath,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.trademark.pojo.SysMenu" >
+    update k_sys_menu
+    <set >
+      <if test="code != null" >
+        code = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="pcode != null" >
+        pcode = #{pcode,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null" >
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="showName != null" >
+        show_name = #{showName,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="icon != null" >
+        icon = #{icon,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null" >
+        url = #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="seat != null" >
+        seat = #{seat,jdbcType=INTEGER},
+      </if>
+      <if test="treepath != null" >
+        treepath = #{treepath,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where menu_id = #{menuId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.trademark.pojo.SysMenu" >
+    update k_sys_menu
+    set code = #{code,jdbcType=VARCHAR},
+      pcode = #{pcode,jdbcType=VARCHAR},
+      title = #{title,jdbcType=VARCHAR},
+      show_name = #{showName,jdbcType=VARCHAR},
+      create_date = #{createDate,jdbcType=TIMESTAMP},
+      icon = #{icon,jdbcType=VARCHAR},
+      url = #{url,jdbcType=VARCHAR},
+      seat = #{seat,jdbcType=INTEGER},
+      treepath = #{treepath,jdbcType=VARCHAR}
+    where menu_id = #{menuId,jdbcType=INTEGER}
+  </update>
+</mapper>

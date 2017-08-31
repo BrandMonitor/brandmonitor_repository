@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.trademark.dao.TrademarkInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.trademark.pojo.TrademarkInfo" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="is_invalid" property="isInvalid" jdbcType="BIT" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="code" property="code" jdbcType="VARCHAR" />
+    <result column="pcode" property="pcode" jdbcType="VARCHAR" />
+    <result column="serve_name" property="serveName" jdbcType="VARCHAR" />
+    <result column="serve_english_name" property="serveEnglishName" jdbcType="VARCHAR" />
+    <result column="remarks" property="remarks" jdbcType="VARCHAR" />
+    <result column="explains" property="explains" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="INTEGER" />
+    <result column="seat" property="seat" jdbcType="INTEGER" />
+    <result column="update_user" property="updateUser" jdbcType="INTEGER" />
+    <result column="updata_time" property="updataTime" jdbcType="TIMESTAMP" />
+    <result column="belongs" property="belongs" jdbcType="VARCHAR"/>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, is_invalid, create_time, code, pcode, serve_name, serve_english_name, remarks, 
+    explains, type, seat, update_user, updata_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from k_trademark_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from k_trademark_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.trademark.pojo.TrademarkInfo" >
+    insert into k_trademark_info (id, is_invalid, create_time, 
+      code, pcode, serve_name, 
+      serve_english_name, remarks, explains, 
+      type, seat, update_user, 
+      updata_time)
+    values (#{id,jdbcType=INTEGER}, #{isInvalid,jdbcType=BIT}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{code,jdbcType=INTEGER}, #{pcode,jdbcType=INTEGER}, #{serveName,jdbcType=VARCHAR}, 
+      #{serveEnglishName,jdbcType=VARCHAR}, #{remarks,jdbcType=VARCHAR}, #{explains,jdbcType=VARCHAR}, 
+      #{type,jdbcType=INTEGER}, #{seat,jdbcType=INTEGER}, #{updateUser,jdbcType=INTEGER}, 
+      #{updataTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.trademark.pojo.TrademarkInfo" >
+    insert into k_trademark_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="isInvalid != null" >
+        is_invalid,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="code != null" >
+        code,
+      </if>
+      <if test="pcode != null" >
+        pcode,
+      </if>
+      <if test="serveName != null" >
+        serve_name,
+      </if>
+      <if test="serveEnglishName != null" >
+        serve_english_name,
+      </if>
+      <if test="remarks != null" >
+        remarks,
+      </if>
+      <if test="explains != null" >
+        explains,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="seat != null" >
+        seat,
+      </if>
+      <if test="updateUser != null" >
+        update_user,
+      </if>
+      <if test="updataTime != null" >
+        updata_time,
+      </if>
+      <if test="belongs !=null">
+        belongs,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="isInvalid != null" >
+        #{isInvalid,jdbcType=BIT},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="code != null" >
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="pcode != null" >
+        #{pcode,jdbcType=VARCHAR},
+      </if>
+      <if test="serveName != null" >
+        #{serveName,jdbcType=VARCHAR},
+      </if>
+      <if test="serveEnglishName != null" >
+        #{serveEnglishName,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null" >
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="explains != null" >
+        #{explains,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=INTEGER},
+      </if>
+      <if test="seat != null" >
+        #{seat,jdbcType=INTEGER},
+      </if>
+      <if test="updateUser != null" >
+        #{updateUser,jdbcType=INTEGER},
+      </if>
+      <if test="updataTime != null" >
+        #{updataTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="belongs!=null">
+      #{belongs,jdbcType=VARCHAR}
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.trademark.pojo.TrademarkInfo" >
+    update k_trademark_info
+    <set >
+      <if test="isInvalid != null" >
+        is_invalid = #{isInvalid,jdbcType=BIT},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="code != null" >
+        code = #{code,jdbcType=INTEGER},
+      </if>
+      <if test="pcode != null" >
+        pcode = #{pcode,jdbcType=INTEGER},
+      </if>
+      <if test="serveName != null" >
+        serve_name = #{serveName,jdbcType=VARCHAR},
+      </if>
+      <if test="serveEnglishName != null" >
+        serve_english_name = #{serveEnglishName,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null" >
+        remarks = #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="explains != null" >
+        explains = #{explains,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=INTEGER},
+      </if>
+      <if test="seat != null" >
+        seat = #{seat,jdbcType=INTEGER},
+      </if>
+      <if test="updateUser != null" >
+        update_user = #{updateUser,jdbcType=INTEGER},
+      </if>
+      <if test="updataTime != null" >
+        updata_time = #{updataTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.trademark.pojo.TrademarkInfo" >
+    update k_trademark_info
+    set is_invalid = #{isInvalid,jdbcType=BIT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      code = #{code,jdbcType=INTEGER},
+      pcode = #{pcode,jdbcType=INTEGER},
+      serve_name = #{serveName,jdbcType=VARCHAR},
+      serve_english_name = #{serveEnglishName,jdbcType=VARCHAR},
+      remarks = #{remarks,jdbcType=VARCHAR},
+      explains = #{explains,jdbcType=VARCHAR},
+      type = #{type,jdbcType=INTEGER},
+      seat = #{seat,jdbcType=INTEGER},
+      update_user = #{updateUser,jdbcType=INTEGER},
+      updata_time = #{updataTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <!-- 查询商标类型 -->
+  <select id="selectAll" parameterType="com.trademark.pojo.TrademarkInfo" resultMap="BaseResultMap">
+      select * from k_trademark_info
+      <where>
+         type=1
+   <if test="queryType == 0">
+      <if test="code == null and serveName == null">
+         and pcode is null
+      </if>
+      <if test="code != null" >
+       and code = #{code,jdbcType=INTEGER} or pcode = #{code,jdbcType=INTEGER}
+      </if>
+      <if test="serveName != null" >
+       and serve_name like '%${serveName}%' and pcode is not null and seat=3
+      </if>
+      <if test="belongs!=null">
+       and belongs =#{belongs}
+      </if>
+   </if>
+   <if test="queryType == 1">
+       <if test="code == null   and serveName == null and pcode == null"  >
+         and pcode is null
+      </if>
+      <if test="code != null" >
+       and code = #{code,jdbcType=INTEGER}   or pcode = #{code,jdbcType=INTEGER}  
+      </if>
+      <if test="pcode!=null">
+      and pcode = #{pcode,jdbcType=INTEGER} and code !=''
+      </if>
+      <if test="serveName != null" >
+       and serve_name like '%${serveName}%'
+      </if>
+   </if>
+       order by 
+	   id 
+      </where>
+      
+  </select>
+  <!-- 查询图文要素 -->
+  <select id="selectgraphic" parameterType="com.trademark.pojo.TrademarkInfo" resultMap="BaseResultMap">
+     select   *  from k_trademark_info
+     <where>
+        type=2
+         <if test="code == null and serveName == null and pcode == null">
+         and pcode is null
+      </if>
+      <if test="pcode != null" >
+       and  pcode = #{pcode,jdbcType=INTEGER}
+      </if>
+      <if test="code!=null">
+      and code=#{code}
+      </if>
+      <if test="serveName != null" >
+       and serve_name like '%${serveName}%'
+      </if>
+     </where>
+  </select>
+  
+  <select id="queryCode" parameterType="java.lang.String" resultMap="BaseResultMap">
+     select * from k_trademark_info where code=#{code} and type=1
+  </select>
+</mapper>

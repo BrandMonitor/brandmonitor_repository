@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.trademark.dao.TrademarkQueryInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.trademark.pojo.TrademarkQueryInfo" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="is_invalid" property="isInvalid" jdbcType="BIT" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="img" property="img" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="classify" property="classify" jdbcType="INTEGER" />
+    <result column="register_no" property="registerNo" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="application_date" property="applicationDate" jdbcType="VARCHAR" />
+    <result column="register_date" property="registerDate" jdbcType="VARCHAR" />
+    <result column="proposer" property="proposer" jdbcType="VARCHAR" />
+    <result column="proposer_address" property="proposerAddress" jdbcType="VARCHAR" />
+    <result column="proposer_en" property="proposerEn" jdbcType="VARCHAR" />
+    <result column="proposer_address_en" property="proposerAddressEn" jdbcType="VARCHAR" />
+    <result column="praeiudicium_notice_no" property="praeiudiciumNoticeNo" jdbcType="INTEGER" />
+    <result column="praeiudicium_notice_date" property="praeiudiciumNoticeDate" jdbcType="VARCHAR" />
+    <result column="register_notice_no" property="registerNoticeNo" jdbcType="VARCHAR" />
+    <result column="register_notice_date" property="registerNoticeDate" jdbcType="VARCHAR" />
+    <result column="exclusive_deadline" property="exclusiveDeadline" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+    <result column="is_public_trademark" property="isPublicTrademark" jdbcType="VARCHAR" />
+    <result column="remarks" property="remarks" jdbcType="VARCHAR" />
+    <result column="surrogated_name" property="surrogatedName" jdbcType="VARCHAR" />
+    <result column="service" property="service" jdbcType="VARCHAR" />
+    <result column="similar_group" property="similarGroup" jdbcType="VARCHAR" />
+    <result column="trademark_process" property="trademarkProcess" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, is_invalid, create_time, img, name, classify, register_no, status, application_date, 
+    register_date, proposer, proposer_address, proposer_en, proposer_address_en, praeiudicium_notice_no, 
+    praeiudicium_notice_date, register_notice_no, register_notice_date, exclusive_deadline, 
+    type, is_public_trademark, remarks, surrogated_name, service, similar_group, trademark_process
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from k_trademark_query_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  
+  
+  <select id="selectByTrademark" resultMap="BaseResultMap" parameterType="com.trademark.pojo.TrademarkQueryInfo" >
+    select 
+    <include refid="Base_Column_List" />
+    from k_trademark_query_info
+    <where>
+    1 = 1
+        <if test="name != null">
+         and name like CONCAT('%',#{name,jdbcType=VARCHAR},'%')
+        </if>
+    	<if test="proposer != null">
+        and proposer like CONCAT('%',#{proposer,jdbcType=VARCHAR},'%')
+        </if>
+        <if test="registerNo != null">
+         and register_no = #{registerNo,jdbcType=VARCHAR}
+        </if>
+        <if test="classify != null">
+           and classify = #{classify,jdbcType=INTEGER}
+        </if>
+    </where>
+    <!--<if test="isNull != null">
+        order by id desc
+    </if>-->
+      order by id desc
+    <if test="page != null and pageSize != null">
+       limit #{page},#{pageSize}
+    </if>
+
+  </select>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from k_trademark_query_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.trademark.pojo.TrademarkQueryInfo" >
+    insert into k_trademark_query_info (id, is_invalid, create_time, 
+      img, name, classify, 
+      register_no, status, application_date, 
+      register_date, proposer, proposer_address, 
+      proposer_en, proposer_address_en, praeiudicium_notice_no, 
+      praeiudicium_notice_date, register_notice_no, 
+      register_notice_date, exclusive_deadline, 
+      type, is_public_trademark, remarks, 
+      surrogated_name, service, similar_group, 
+      trademark_process)
+    values (#{id,jdbcType=INTEGER}, #{isInvalid,jdbcType=BIT}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{img,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{classify,jdbcType=INTEGER}, 
+      #{registerNo,jdbcType=INTEGER}, #{status,jdbcType=VARCHAR}, #{applicationDate,jdbcType=TIMESTAMP}, 
+      #{registerDate,jdbcType=TIMESTAMP}, #{proposer,jdbcType=VARCHAR}, #{proposerAddress,jdbcType=VARCHAR}, 
+      #{proposerEn,jdbcType=VARCHAR}, #{proposerAddressEn,jdbcType=VARCHAR}, #{praeiudiciumNoticeNo,jdbcType=INTEGER}, 
+      #{praeiudiciumNoticeDate,jdbcType=TIMESTAMP}, #{registerNoticeNo,jdbcType=VARCHAR}, 
+      #{registerNoticeDate,jdbcType=TIMESTAMP}, #{exclusiveDeadline,jdbcType=VARCHAR}, 
+      #{type,jdbcType=VARCHAR}, #{isPublicTrademark,jdbcType=VARCHAR}, #{remarks,jdbcType=VARCHAR}, 
+      #{surrogatedName,jdbcType=VARCHAR}, #{service,jdbcType=VARCHAR}, #{similarGroup,jdbcType=VARCHAR}, 
+      #{trademarkProcess,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.trademark.pojo.TrademarkQueryInfo" >
+    insert into k_trademark_query_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="isInvalid != null" >
+        is_invalid,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="img != null" >
+        img,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="classify != null" >
+        classify,
+      </if>
+      <if test="registerNo != null" >
+        register_no,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="applicationDate != null" >
+        application_date,
+      </if>
+      <if test="registerDate != null" >
+        register_date,
+      </if>
+      <if test="proposer != null" >
+        proposer,
+      </if>
+      <if test="proposerAddress != null" >
+        proposer_address,
+      </if>
+      <if test="proposerEn != null" >
+        proposer_en,
+      </if>
+      <if test="proposerAddressEn != null" >
+        proposer_address_en,
+      </if>
+      <if test="praeiudiciumNoticeNo != null" >
+        praeiudicium_notice_no,
+      </if>
+      <if test="praeiudiciumNoticeDate != null" >
+        praeiudicium_notice_date,
+      </if>
+      <if test="registerNoticeNo != null" >
+        register_notice_no,
+      </if>
+      <if test="registerNoticeDate != null" >
+        register_notice_date,
+      </if>
+      <if test="exclusiveDeadline != null" >
+        exclusive_deadline,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="isPublicTrademark != null" >
+        is_public_trademark,
+      </if>
+      <if test="remarks != null" >
+        remarks,
+      </if>
+      <if test="surrogatedName != null" >
+        surrogated_name,
+      </if>
+      <if test="service != null" >
+        service,
+      </if>
+      <if test="similarGroup != null" >
+        similar_group,
+      </if>
+      <if test="trademarkProcess != null" >
+        trademark_process,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="isInvalid != null" >
+        #{isInvalid,jdbcType=BIT},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="img != null" >
+        #{img,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="classify != null" >
+        #{classify,jdbcType=INTEGER},
+      </if>
+      <if test="registerNo != null" >
+        #{registerNo,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationDate != null" >
+        #{applicationDate,jdbcType=VARCHAR},
+      </if>
+      <if test="registerDate != null" >
+        #{registerDate,jdbcType=VARCHAR},
+      </if>
+      <if test="proposer != null" >
+        #{proposer,jdbcType=VARCHAR},
+      </if>
+      <if test="proposerAddress != null" >
+        #{proposerAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="proposerEn != null" >
+        #{proposerEn,jdbcType=VARCHAR},
+      </if>
+      <if test="proposerAddressEn != null" >
+        #{proposerAddressEn,jdbcType=VARCHAR},
+      </if>
+      <if test="praeiudiciumNoticeNo != null" >
+        #{praeiudiciumNoticeNo,jdbcType=INTEGER},
+      </if>
+      <if test="praeiudiciumNoticeDate != null" >
+        #{praeiudiciumNoticeDate,jdbcType=VARCHAR},
+      </if>
+      <if test="registerNoticeNo != null" >
+        #{registerNoticeNo,jdbcType=VARCHAR},
+      </if>
+      <if test="registerNoticeDate != null" >
+        #{registerNoticeDate,jdbcType=VARCHAR},
+      </if>
+      <if test="exclusiveDeadline != null" >
+        #{exclusiveDeadline,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="isPublicTrademark != null" >
+        #{isPublicTrademark,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null" >
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="surrogatedName != null" >
+        #{surrogatedName,jdbcType=VARCHAR},
+      </if>
+      <if test="service != null" >
+        #{service,jdbcType=VARCHAR},
+      </if>
+      <if test="similarGroup != null" >
+        #{similarGroup,jdbcType=VARCHAR},
+      </if>
+      <if test="trademarkProcess != null" >
+        #{trademarkProcess,jdbcType=VARCHAR},
+      </if>
+    </trim>
+    ON DUPLICATE KEY UPDATE 
+    <if test="isInvalid != null" >
+        is_invalid = VALUES(is_invalid),
+      </if>
+      <if test="img != null" >
+        img = VALUES(img),
+      </if>
+      <if test="name != null" >
+        name = VALUES(name),
+      </if>
+      <if test="classify != null" >
+        classify = VALUES(classify),
+      </if>
+      <if test="registerNo != null" >
+        register_no = VALUES(register_no),
+      </if>
+      <if test="status != null" >
+        status = VALUES(status),
+      </if>
+      <if test="applicationDate != null" >
+        application_date = VALUES(application_date),
+      </if>
+      <if test="registerDate != null" >
+        register_date = VALUES(register_date),
+      </if>
+      <if test="proposer != null" >
+        proposer = VALUES(proposer),
+      </if>
+      <if test="proposerAddress != null" >
+        proposer_address = VALUES(proposer_address),
+      </if>
+      <if test="proposerEn != null" >
+        proposer_en = VALUES(proposer_en),
+      </if>
+      <if test="proposerAddressEn != null" >
+        proposer_address_en = VALUES(proposer_address_en),
+      </if>
+      <if test="praeiudiciumNoticeNo != null" >
+        praeiudicium_notice_no = VALUES(praeiudicium_notice_no),
+      </if>
+      <if test="praeiudiciumNoticeDate != null" >
+        praeiudicium_notice_date = VALUES(praeiudicium_notice_date),
+      </if>
+      <if test="registerNoticeNo != null" >
+        register_notice_no = VALUES(register_notice_no),
+      </if>
+      <if test="registerNoticeDate != null" >
+        register_notice_date = VALUES(register_notice_date),
+      </if>
+      <if test="exclusiveDeadline != null" >
+        exclusive_deadline = VALUES(exclusive_deadline),
+      </if>
+      <if test="type != null" >
+        type = VALUES(type),
+      </if>
+      <if test="isPublicTrademark != null" >
+        is_public_trademark = VALUES(is_public_trademark),
+      </if>
+      <if test="remarks != null" >
+        remarks = VALUES(remarks),
+      </if>
+      <if test="surrogatedName != null" >
+        surrogated_name = VALUES(surrogated_name),
+      </if>
+      <if test="service != null" >
+        service = VALUES(service),
+      </if>
+      <if test="similarGroup != null" >
+        similar_group = VALUES(similar_group),
+      </if>
+      <if test="trademarkProcess != null" >
+        trademark_process = VALUES(trademark_process) 
+      </if>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.trademark.pojo.TrademarkQueryInfo" >
+    update k_trademark_query_info
+    <set >
+      <if test="isInvalid != null" >
+        is_invalid = #{isInvalid,jdbcType=BIT},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="img != null" >
+        img = #{img,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="classify != null" >
+        classify = #{classify,jdbcType=INTEGER},
+      </if>
+      <if test="registerNo != null" >
+        register_no = #{registerNo,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationDate != null" >
+        application_date = #{applicationDate,jdbcType=VARCHAR},
+      </if>
+      <if test="registerDate != null" >
+        register_date = #{registerDate,jdbcType=VARCHAR},
+      </if>
+      <if test="proposer != null" >
+        proposer = #{proposer,jdbcType=VARCHAR},
+      </if>
+      <if test="proposerAddress != null" >
+        proposer_address = #{proposerAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="proposerEn != null" >
+        proposer_en = #{proposerEn,jdbcType=VARCHAR},
+      </if>
+      <if test="proposerAddressEn != null" >
+        proposer_address_en = #{proposerAddressEn,jdbcType=VARCHAR},
+      </if>
+      <if test="praeiudiciumNoticeNo != null" >
+        praeiudicium_notice_no = #{praeiudiciumNoticeNo,jdbcType=INTEGER},
+      </if>
+      <if test="praeiudiciumNoticeDate != null" >
+        praeiudicium_notice_date = #{praeiudiciumNoticeDate,jdbcType=VARCHAR},
+      </if>
+      <if test="registerNoticeNo != null" >
+        register_notice_no = #{registerNoticeNo,jdbcType=VARCHAR},
+      </if>
+      <if test="registerNoticeDate != null" >
+        register_notice_date = #{registerNoticeDate,jdbcType=VARCHAR},
+      </if>
+      <if test="exclusiveDeadline != null" >
+        exclusive_deadline = #{exclusiveDeadline,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="isPublicTrademark != null" >
+        is_public_trademark = #{isPublicTrademark,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null" >
+        remarks = #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="surrogatedName != null" >
+        surrogated_name = #{surrogatedName,jdbcType=VARCHAR},
+      </if>
+      <if test="service != null" >
+        service = #{service,jdbcType=VARCHAR},
+      </if>
+      <if test="similarGroup != null" >
+        similar_group = #{similarGroup,jdbcType=VARCHAR},
+      </if>
+      <if test="trademarkProcess != null" >
+        trademark_process = #{trademarkProcess,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.trademark.pojo.TrademarkQueryInfo" >
+    update k_trademark_query_info
+    set is_invalid = #{isInvalid,jdbcType=BIT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      img = #{img,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      classify = #{classify,jdbcType=INTEGER},
+      register_no = #{registerNo,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR},
+      application_date = #{applicationDate,jdbcType=TIMESTAMP},
+      register_date = #{registerDate,jdbcType=TIMESTAMP},
+      proposer = #{proposer,jdbcType=VARCHAR},
+      proposer_address = #{proposerAddress,jdbcType=VARCHAR},
+      proposer_en = #{proposerEn,jdbcType=VARCHAR},
+      proposer_address_en = #{proposerAddressEn,jdbcType=VARCHAR},
+      praeiudicium_notice_no = #{praeiudiciumNoticeNo,jdbcType=INTEGER},
+      praeiudicium_notice_date = #{praeiudiciumNoticeDate,jdbcType=TIMESTAMP},
+      register_notice_no = #{registerNoticeNo,jdbcType=VARCHAR},
+      register_notice_date = #{registerNoticeDate,jdbcType=TIMESTAMP},
+      exclusive_deadline = #{exclusiveDeadline,jdbcType=VARCHAR},
+      type = #{type,jdbcType=VARCHAR},
+      is_public_trademark = #{isPublicTrademark,jdbcType=BIT},
+      remarks = #{remarks,jdbcType=VARCHAR},
+      surrogated_name = #{surrogatedName,jdbcType=VARCHAR},
+      service = #{service,jdbcType=VARCHAR},
+      similar_group = #{similarGroup,jdbcType=VARCHAR},
+      trademark_process = #{trademarkProcess,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.trademark.dao.AdminUserMapper" >
+  <resultMap id="BaseResultMap" type="com.trademark.pojo.AdminUser" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="staff_code" property="staffCode" jdbcType="VARCHAR" />
+    <result column="user_name" property="userName" jdbcType="VARCHAR" />
+    <result column="tel" property="tel" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="qq" property="qq" jdbcType="VARCHAR" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="position" property="position" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="last_login_time" property="lastLoginTime" jdbcType="TIMESTAMP" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, staff_code, user_name, tel, password, qq, email, position, status, last_login_time, 
+    create_time, remark
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from k_admin_user
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  
+  <select id="selectByStaffCode" resultType="map" parameterType="map" >
+    SELECT
+	staff_code,
+	status 
+	FROM
+		k_admin_user admin
+	WHERE
+		admin.staff_code = #{staffCode,jdbcType=VARCHAR}
+		<if test="status != null">
+			and admin.status = #{status,jdbcType=INTEGER}
+		</if>	
+	UNION ALL
+	SELECT
+		staff_code,
+		is_invalid as status
+	FROM
+		k_users users
+	WHERE
+		users.staff_code = #{staffCode,jdbcType=VARCHAR}
+		<if test="status != null">
+			and users.is_invalid = #{status,jdbcType=INTEGER}
+		</if>
+  </select>
+  
+  
+  <select id="selectByAll" resultMap="BaseResultMap" parameterType="com.trademark.pojo.AdminUser" >
+    select 
+    <include refid="Base_Column_List" />
+    from k_admin_user
+    <where>
+        1 = 1
+      <if test="id != null">
+       and id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="staffCode != null" >
+        and staff_code = #{staffCode,jdbcType=VARCHAR}
+      </if>
+      <if test="userName != null" >
+        and user_name = #{userName,jdbcType=VARCHAR}
+      </if>
+      <if test="tel != null" >
+        and tel = #{tel,jdbcType=VARCHAR}
+      </if>
+      <if test="password != null" >
+        and password = #{password,jdbcType=VARCHAR}
+      </if>
+      <if test="qq != null" >
+        and qq = #{qq,jdbcType=VARCHAR}
+      </if>
+      <if test="email != null" >
+        and email = #{email,jdbcType=VARCHAR}
+      </if>
+      <if test="position != null" >
+        and position = #{position,jdbcType=VARCHAR}
+      </if>
+      <if test="status != null" >
+        and status = #{status,jdbcType=INTEGER}
+      </if>
+      <if test="lastLoginTime != null" >
+        and last_login_time = #{lastLoginTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="createTime != null" >
+        and create_time = #{createTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="remark != null" >
+        and remark = #{remark,jdbcType=VARCHAR}
+      </if>
+    </where>
+    <if test="page != null and pageSize != null">
+      limit #{page},#{pageSize}
+    </if>
+  </select>
+  <select id="selectCount" resultType="Integer" parameterType="com.trademark.pojo.AdminUser" >
+    select
+      count(id)
+    from k_admin_user
+    <where>
+      1 = 1
+      <if test="id != null">
+        and id = #{id,jdbcType=INTEGER}
+      </if>
+      <if test="staffCode != null" >
+        and staff_code = #{staffCode,jdbcType=VARCHAR}
+      </if>
+      <if test="userName != null" >
+        and user_name = #{userName,jdbcType=VARCHAR}
+      </if>
+      <if test="tel != null" >
+        and tel = #{tel,jdbcType=VARCHAR}
+      </if>
+      <if test="password != null" >
+        and password = #{password,jdbcType=VARCHAR}
+      </if>
+      <if test="qq != null" >
+        and qq = #{qq,jdbcType=VARCHAR}
+      </if>
+      <if test="email != null" >
+        and email = #{email,jdbcType=VARCHAR}
+      </if>
+      <if test="position != null" >
+        and position = #{position,jdbcType=VARCHAR}
+      </if>
+      <if test="status != null" >
+        and status = #{status,jdbcType=INTEGER}
+      </if>
+      <if test="lastLoginTime != null" >
+        and last_login_time = #{lastLoginTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="createTime != null" >
+        and create_time = #{createTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="remark != null" >
+        and remark = #{remark,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </select>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from k_admin_user
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.trademark.pojo.AdminUser" >
+    insert into k_admin_user (id, staff_code, user_name, 
+      tel, password, qq, 
+      email, position, status, 
+      last_login_time, create_time, remark
+      )
+    values (#{id,jdbcType=INTEGER}, #{staffCode,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, 
+      #{tel,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{qq,jdbcType=VARCHAR}, 
+      #{email,jdbcType=VARCHAR}, #{position,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, 
+      #{lastLoginTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP}, #{remark,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.trademark.pojo.AdminUser" >
+    insert into k_admin_user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+     
+      <if test="staffCode != null" >
+        staff_code,
+      </if>
+      <if test="userName != null" >
+        user_name,
+      </if>
+      <if test="tel != null" >
+        tel,
+      </if>
+      <if test="password != null" >
+        password,
+      </if>
+      <if test="qq != null" >
+        qq,
+      </if>
+      <if test="email != null" >
+        email,
+      </if>
+      <if test="position != null" >
+        position,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="lastLoginTime != null" >
+        last_login_time,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      
+      <if test="staffCode != null" >
+        #{staffCode,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null" >
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null" >
+        #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="qq != null" >
+        #{qq,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="position != null" >
+        #{position,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="lastLoginTime != null" >
+        #{lastLoginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.trademark.pojo.AdminUser" >
+    update k_admin_user
+    <set >
+      <if test="userName != null" >
+        user_name = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null" >
+        tel = #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="qq != null" >
+        qq = #{qq,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="position != null" >
+        position = #{position,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="lastLoginTime != null" >
+        last_login_time = #{lastLoginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where staff_code = #{staff_code,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.trademark.pojo.AdminUser" >
+    update k_admin_user
+    set staff_code = #{staffCode,jdbcType=VARCHAR},
+      user_name = #{userName,jdbcType=VARCHAR},
+      tel = #{tel,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      qq = #{qq,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      position = #{position,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      last_login_time = #{lastLoginTime,jdbcType=TIMESTAMP},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      remark = #{remark,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  
+  
+</mapper>

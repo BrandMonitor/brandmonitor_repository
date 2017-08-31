@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.trademark.dao.TrademarkCheckLogMapper" >
+  <resultMap id="BaseResultMap" type="com.trademark.pojo.TrademarkCheckLog" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="is_invalid" property="isInvalid" jdbcType="BIT" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="relate_id" property="relateId" jdbcType="INTEGER" />
+    <result column="type" property="type" jdbcType="INTEGER" />
+    <result column="check_status" property="checkStatus" jdbcType="INTEGER" />
+    <result column="check_user" property="checkUser" jdbcType="INTEGER" />
+    <result column="check_time" property="checkTime" jdbcType="TIMESTAMP" />
+    <result column="reason" property="reason" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, is_invalid, create_time, relate_id, type, check_status, check_user, check_time, 
+    reason
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from k_trademark_check_log
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from k_trademark_check_log
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.trademark.pojo.TrademarkCheckLog" >
+    insert into k_trademark_check_log (id, is_invalid, create_time, 
+      relate_id, type, check_status, 
+      check_user, check_time, reason
+      )
+    values (#{id,jdbcType=INTEGER}, #{isInvalid,jdbcType=BIT}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{relateId,jdbcType=INTEGER}, #{type,jdbcType=INTEGER}, #{checkStatus,jdbcType=INTEGER}, 
+      #{checkUser,jdbcType=INTEGER}, #{checkTime,jdbcType=TIMESTAMP}, #{reason,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.trademark.pojo.TrademarkCheckLog" >
+    insert into k_trademark_check_log
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="relateId != null" >
+        relate_id,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="checkStatus != null" >
+        check_status,
+      </if>
+      <if test="checkUser != null" >
+        check_user,
+      </if>
+      <if test="checkTime != null" >
+        check_time,
+      </if>
+      <if test="reason != null" >
+        reason,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+     
+      <if test="relateId != null" >
+        #{relateId,jdbcType=INTEGER},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=INTEGER},
+      </if>
+      <if test="checkStatus != null" >
+        #{checkStatus,jdbcType=INTEGER},
+      </if>
+      <if test="checkUser != null" >
+        #{checkUser,jdbcType=INTEGER},
+      </if>
+      <if test="checkTime != null" >
+        #{checkTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="reason != null" >
+        #{reason,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.trademark.pojo.TrademarkCheckLog" >
+    update k_trademark_check_log
+    <set >
+      <if test="isInvalid != null" >
+        is_invalid = #{isInvalid,jdbcType=BIT},
+      </if>
+      
+      <if test="checkStatus != null" >
+        check_status = #{checkStatus,jdbcType=INTEGER},
+      </if>
+      <if test="checkUser != null" >
+        check_user = #{checkUser,jdbcType=INTEGER},
+      </if>
+      <if test="checkTime != null" >
+        check_time = #{checkTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="reason != null" >
+        reason = #{reason,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where 1 = 1
+        and relate_id = #{relateId,jdbcType=INTEGER}
+      
+        and type = #{type,jdbcType=INTEGER}
+      
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.trademark.pojo.TrademarkCheckLog" >
+    update k_trademark_check_log
+    set is_invalid = #{isInvalid,jdbcType=BIT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      relate_id = #{relateId,jdbcType=INTEGER},
+      type = #{type,jdbcType=INTEGER},
+      check_status = #{checkStatus,jdbcType=INTEGER},
+      check_user = #{checkUser,jdbcType=INTEGER},
+      check_time = #{checkTime,jdbcType=TIMESTAMP},
+      reason = #{reason,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

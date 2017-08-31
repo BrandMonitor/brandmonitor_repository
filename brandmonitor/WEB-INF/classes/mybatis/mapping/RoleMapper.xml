@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.trademark.dao.RoleMapper" >
+  <resultMap id="BaseResultMap" type="com.trademark.pojo.Role" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="is_invalid" property="isInvalid" jdbcType="BIT" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="role_name" property="roleName" jdbcType="VARCHAR" />
+    <result column="description" property="description" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, is_invalid, create_time, role_name, description
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from k_role
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectByStaffCode" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+  SELECT
+	<include refid="Base_Column_List" />
+	FROM
+		k_role r
+	LEFT JOIN k_user_role ur ON r.id = ur.role_id
+	WHERE
+		ur.user_id = #{userId,jdbcType=INTEGER}
+  </select>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from k_role
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.trademark.pojo.Role" >
+    insert into k_role (id, is_invalid, create_time, 
+      role_name, description)
+    values (#{id,jdbcType=INTEGER}, #{isInvalid,jdbcType=BIT}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{roleName,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.trademark.pojo.Role" >
+    insert into k_role
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="isInvalid != null" >
+        is_invalid,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="roleName != null" >
+        role_name,
+      </if>
+      <if test="description != null" >
+        description,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="isInvalid != null" >
+        #{isInvalid,jdbcType=BIT},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="roleName != null" >
+        #{roleName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.trademark.pojo.Role" >
+    update k_role
+    <set >
+      <if test="isInvalid != null" >
+        is_invalid = #{isInvalid,jdbcType=BIT},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="roleName != null" >
+        role_name = #{roleName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.trademark.pojo.Role" >
+    update k_role
+    set is_invalid = #{isInvalid,jdbcType=BIT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      role_name = #{roleName,jdbcType=VARCHAR},
+      description = #{description,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

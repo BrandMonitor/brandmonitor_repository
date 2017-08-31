@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+    <!-- SpringMVC配置 -->  
+      
+    <!-- 通过component-scan 让Spring扫描controller下的所有的类，让Spring的代码注解生效 -->  
+    <context:component-scan base-package="com.trademark.controller.*"></context:component-scan> 
+    
+    <mvc:annotation-driven />
+	<mvc:default-servlet-handler/>  
+	
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping" />
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+        <property name="messageConverters">
+  			<list>
+   				<ref bean="jsonHttpMessageConverter" /><!-- json转换器 -->
+   				<ref bean="stringHttpMessageConverter" /> <!-- string -->
+  			</list>
+		</property>
+    </bean>
+	<!--   which is used to convert the Objects from/to JSON. -->
+	<bean id="jsonHttpMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" >
+	     <property name="objectMapper" >
+		     <!-- JXAB ObjectMapper For JASON, Supported JAXB annotations -->
+          	<bean class="com.fasterxml.jackson.databind.ObjectMapper"/>
+         </property>
+	</bean>
+
+	 <!-- 通过替换StringHttpMessageConverter class 解决乱码，将DEFAULT_CHARSET = Charset.forName("UTF-8");设置成utf-8 -->
+    <bean id="stringHttpMessageConverter" class = "org.springframework.http.converter.StringHttpMessageConverter">
+        <property name ="supportedMediaTypes">
+              <list>
+                  <value>text/plain;charset=UTF-8</value>
+                  <value>text/html;charset=UTF-8</value>
+              </list>
+        </property>
+        <!-- 这句配置使得返回的内容头文件不会有一大串AcceptCharset -->
+        <property name="writeAcceptCharset" value="false"/>
+   </bean>
+   
+	<!--<bean id="contentNegotiationManager" class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
+		<property name="mediaTypes">
+			<value>
+				html=text/html
+				json=application/json
+			</value>
+		</property>
+		<property name="defaultContentType" value="text/html"/>
+	</bean>
+	
+    <bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+		<property name="contentNegotiationManager" ref="contentNegotiationManager"/>
+		<property name="viewResolvers">
+			<list>
+				<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+					<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+					<property name="prefix" value="/"/>
+					<property name="suffix" value=".jsp" />
+				</bean>
+			</list>
+		</property>
+	</bean>-->
+	<!-- 对模型视图名称的解析，即在模型视图名称添加前后缀 -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/"></property>
+		<property name="suffix" value=".jsp"></property>
+	</bean>
+	<bean class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter"/>
+   
+   <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="defaultEncoding">
+			<value>UTF-8</value>
+		</property>
+		<property name="maxUploadSize">
+			<value>32505856</value><!-- 上传文件大小限制为31M，31*1024*1024 -->
+		</property>
+		<property name="maxInMemorySize">
+			<value>4096</value>
+		</property>
+	</bean>
+	
+	<!-- shiro 拦截 -->
+	<bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator" depends-on="lifecycleBeanPostProcessor"/>  
+    <bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">  
+        <property name="securityManager" ref="securityManager"/>  
+    </bean>  
+    
+    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">  
+    <property name="exceptionMappings">  
+        <props>  
+            <prop key="org.apache.shiro.authz.UnauthorizedException">  
+                /error/403  
+            </prop>  
+            <prop key="org.apache.shiro.authz.UnauthenticatedException">  
+                /error/401  
+            </prop>  
+        </props>  
+    </property>  
+</bean> 
+	
+</beans>

@@ -1,0 +1,317 @@
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, 
+dl, dt, dd, ul, ol, li, pre, form, fieldset, legend,
+button, input, textarea, th, td, a {
+    padding: 0;
+    margin: 0;
+}
+body{
+	font: 14px/1.6 Arial,SimSun;
+}
+.header{
+	width: 1000px;
+	margin: 0 auto;
+}
+.logo{
+	width: 120px;
+}
+.container {
+    width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+.crumb{
+	margin: 10px 0 0;
+	padding-left: 25px;
+	height: 17px;
+	line-height: 17px;
+	color: #777;
+	font-size: 12px;
+	line-height: 17px;
+    color: #777;
+    font-size: 12px;
+	background: url(http://yulin-img.oss-cn-shenzhen.aliyuncs.com/web%2Fweb%2Ftrademark%2Fcrumb_bg.jpg) no-repeat 5px 0;
+}
+.clearfix {
+    zoom: 1;
+}
+.com_steps_3 .steps_list li .left {
+    width: 322px;
+}
+.steps_list li {
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+}
+.steps_list .cur .left {
+    background: #ffb65f;
+}
+.steps_list li .left {
+    width: 232px;
+    height: 40px;
+    line-height: 40px;
+    background: #86c7f5;
+    font-weight: 700;
+}
+.com_steps_3 .steps_list .last {
+    width: 300px;
+}
+.com_steps_3 .steps_list li {
+    width: 350px;
+}
+.steps_list li {
+    float: left;
+    width: 260px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+}
+.left {
+    float: left;
+}
+.steps_list li .left em {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 5px;
+    font-size: 30px;
+    line-height: 40px;
+}
+address, cite, dfn, em, var {
+    font-style: normal;
+}
+.steps_list .cur .right {
+    background-position: 0 -40px;
+}
+.steps_list li .right {
+    width: 28px;
+    height: 40px;
+    background: url(http://yulin-img.oss-cn-shenzhen.aliyuncs.com/web%2Fweb%2Ftrademark%2Fsteps_bg.jpg) no-repeat;
+}
+.right {
+    float: right;
+}
+.mt15 {
+    margin-top: 15px;
+}
+ul, ol {
+    list-style: none;
+}
+.com_steps_3 .steps_list li {
+    width: 350px;
+}
+.steps_list li {
+    float: left;
+    width: 260px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+}
+.crumb a {
+    color: #0c73b7;
+    margin: 0 5px;
+}
+a{text-decoration: none;}
+/*新用户注册*/
+.mt15 {
+    margin-top: 15px;
+}
+.member_box {
+    border: 1px solid #e1e1e1;
+    padding: 15px;
+}
+.member_tit_orange {
+    border-color: #ff6f21;
+}
+.member_tit_orange, .member_tit_blue, .member_tit_green {
+    font-weight: 700;
+    color: #555;
+    height: 16px;
+    line-height: 16px;
+    padding-left: 10px;
+    border-left: 3px solid;
+}
+.registbox {
+    overflow: hidden;
+    padding: 40px 0 10px 10px;
+} 
+.registbox p {
+    overflow: hidden;
+    zoom: 1;
+    margin-bottom: 28px;
+    position: relative;
+}
+.registbox label {
+    float: left;
+    width: 240px;
+    line-height: 30px;
+    color: #131313;
+    font-size: 14px;
+    text-align: right;
+    margin-right: 10px;
+}
+label {
+    margin: 0 0 0 5px;
+    cursor: pointer;
+}
+.registtext {
+    border: 1px solid #c2c2c2;
+    height: 30px;
+    line-height: 30px;
+    color: #666666;
+    width: 230px;
+    float: left;
+    text-indent: 10px;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: 14px;
+    font-weight: 400;
+    font-family: "Microsoft YaHei";
+}
+.registbox span {
+    float: left;
+    font-size: 12px;
+    height: 25px;
+    padding-left: 25px;
+}
+.pwdsale {
+    background-position: 0 -81px;
+}
+.pwdsale, .low, .middle, .height {
+    display: block;
+    background-image: url(http://yulin-img.oss-cn-shenzhen.aliyuncs.com/web%2Fweb%2Ftrademark%2FsecurityLevel.gif);
+    background-repeat: no-repeat;
+    width: 76px;
+    height: 24px;
+    float: left;
+    margin: 4px 0 0 10px;
+}
+.min_tip_optional {
+    background-position: 5px -102px;
+}
+.min_tip_success, .min_tip_error, .min_tip_optional, .min_tip_notice, .min_tip_doubt {
+    padding-left: 26px;
+    background-image: url(http://yulin-img.oss-cn-shenzhen.aliyuncs.com/web%2Fweb%2Ftrademark%2Fmin_tip_bg.png);
+    background-repeat: no-repeat;
+}
+.min_tip {
+    margin-left: 10px;
+    font-size: 12px;
+    padding: 2px 0;
+    color: #777;
+}
+.min_tip_success{color:#0b9a00;background-position:5px 3px;}
+.min_tip_success_nobg{color:#0b9a00;}
+.min_tip_error{color:#ff3535;background-position:5px -32px;}
+.min_tip_error_nobg{color:#ff3535;padding-left:0;}
+.min_tip_notice{color:#ff6a00;background-position:5px -68px;}
+.min_tip_notice_nobg{color:#ff6a00;}
+.min_tip_optional{background-position:5px -102px;}
+.min_tip_optional_nobg{background:none;}
+.min_tip_doubt{background-position:5px -141px;margin:0;display:inline-block;width:26px;height:16px;vertical-align:middle;padding:0;}
+.faxs {
+    width: 53px;
+}
+.faxl {
+    width: 90px;
+}
+.pwdsale{background-position:0 -81px;}
+.low{background-position:0 -55px;}
+.middle{background-position:0 -26px;}
+.height{background-position:0 0px;}
+.registbox .line {
+    width: auto !important;
+    margin: 0 5px;
+}
+/*完善更多信息*/
+.moreinfor {
+    background: #fff4e7;
+    border: 1px #fcbb6e solid;
+    color: #ff7200;
+    cursor: pointer;
+    width: 180px;
+    line-height: 36px;
+    text-align: left;
+    margin-left: 255px;
+}
+.moreinfor span {
+    float: none;
+    font-size: 14px;
+}
+.short {
+    width: 107px;
+}
+.conturybox #ChCountryForm, .conturybox #ChCityForm, .conturybox #ChPrivinceForm {
+    width: 110px;
+    float: left;
+    display: inline !important;
+    min-width: 110px;
+}
+.registbox select {
+    width: 100px;
+    padding: 3px 0;
+    height: 30px;
+    font-size: 14px;
+}
+.conturybox select {
+    border: 1px solid #ccc;
+    _margin-top: 3px;
+}
+.conturybox span{padding-left: 0;}
+.mshort {
+    width: 160px;
+}
+.registbox .line {
+    width: auto !important;
+    margin: 0 5px;
+}
+.xieyi input {
+    float: left;
+    height: 30px;
+    margin: 0 0px 0 255px;
+    _height: 26px;
+}
+.btn_bor {
+    border-top: 1px solid #f1f1f1;
+    padding-top: 20px;
+    text-align: center;
+}
+.orange_s {
+    width: 72px;
+    background-position: 0 -288px;
+}
+.min_orange_s, .min_orange_l, .orange_s, .orange_l, .gray_s, .gray_l {
+    color: #fff;
+}
+.gray_s, .orange_s, .gray_l, .orange_l {
+    height: 32px;
+    font-weight: 700;
+}
+.com_btn {
+    border: none;
+    border: 0;
+    background-image: url(http://yulin-img.oss-cn-shenzhen.aliyuncs.com/web%2Fweb%2Ftrademark%2Fcom_btn_bg.jpg);
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+.btn_sure{
+	padding-top: 30px;
+	padding-bottom: 10px;
+}
+.btn_sure button{
+    width: 80px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    background-color: orange;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+
+

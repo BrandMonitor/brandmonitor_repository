@@ -1,0 +1,129 @@
+.daemon-btn-add {
+    background:url(../../../image/daemon/tabs/icon/png/add.png) no-repeat !important;
+    _background-image:url(../../../image/daemon/tabs/icon/gif/add.gif);
+}
+.daemon-btn-edit {
+    background:url(../../../image/daemon/tabs/icon/png/edit.png) no-repeat !important;
+    _background-image:url(../../../image/daemon/tabs/icon/gif/edit.gif);
+}
+.daemon-btn-status {
+    background:url(../../../image/daemon/tabs/icon/png/status.png) no-repeat !important;
+    _background-image:url(../../../image/daemon/tabs/icon/gif/status.gif);
+}
+.daemon-btn-statuson {
+    background:url(../../../image/daemon/tabs/icon/png/on.png) no-repeat !important;
+    _background-image:url(../../../image/daemon/tabs/icon/gif/on.gif);
+}
+.daemon-btn-statusoff {
+    background:url(../../../image/daemon/tabs/icon/png/off.png) no-repeat !important;
+    _background-image:url(../../../image/daemon/tabs/icon/gif/off.gif);
+}
+.daemon-btn-statusoff {
+    background:url(../../../image/daemon/tabs/icon/png/off.png) no-repeat !important;
+    _background-image:url(../../../image/daemon/tabs/icon/gif/off.gif);
+}
+.daemon-btn-save {
+    background:url(../../../image/daemon/tabs/icon/png/save.png) no-repeat !important;
+    _background-image:url(../../../image/daemon/tabs/icon/gif/save.gif);
+}
+.daemon-btn-back {
+    background:url(../../../image/daemon/tabs/icon/png/back.png) no-repeat !important;
+    _background-image:url(../../../image/daemon/tabs/icon/gif/back.gif);
+}
+.daemon-btn-foback {
+    background:url(../../../image/daemon/tabs/icon/png/foback.png) center no-repeat !important;
+    _background-image:url(../../../image/daemon/tabs/icon/gif/foback.gif);
+}
+.daemon-btn-forward {
+    background:url(../../../image/daemon/tabs/icon/png/forward.png)  center no-repeat !important;
+    _background-image:url(../../../image/daemon/tabs/icon/gif/forward.gif);
+}
+.daemon-btn-user {
+    background:url(../../../image/daemon/tabs/icon/png/user_suit.png) no-repeat !important;
+    _background-image:url(../../../image/daemon/tabs/icon/gif/user_suit.gif);
+}
+.daemon-btn-quit {
+    background:url(../../../image/daemon/tabs/icon/png/quit.png) no-repeat !important;
+    _background-image:url(../../../image/daemon/tabs/icon/gif/quit.gif);
+}
+.daemon-btn-refresh {
+    background:url(../../../image/daemon/tabs/icon/png/refresh.png) center no-repeat !important;
+    _background-image:url(../../../image/daemon/tabs/icon/gif/refresh.gif);
+}
+.daemon-btn-file {
+    background:url(../../../image/daemon/tabs/icon/png/file.png) no-repeat !important;
+    _background-image:url(../../../image/daemon/tabs/icon/gif/file.gif);
+}
+.daemon-btn-file2 {
+    background:url(../../../image/daemon/tabs/icon/png/file2.png) no-repeat !important;
+    _background-image:url(../../../image/daemon/tabs/icon/gif/file2.gif);
+}
+.daemon-btn-dir {
+    background:url(../../../image/daemon/tabs/icon/png/dir.png) no-repeat !important;
+    _background-image:url(../../../image/daemon/tabs/icon/gif/dir.gif);
+}
+.daemon-btn-close {
+    background:url(../../../image/daemon/tabs/icon/png/close.png) no-repeat !important;
+    _background-image:url(../../../image/daemon/tabs/icon/gif/close.gif);
+}
+.daemon-btn-look {
+    background:url(../../../image/daemon/tabs/icon/png/look.png) no-repeat !important;
+    _background-image:url(../../../image/daemon/tabs/icon/gif/look.gif);
+}
+.daemon-btn-folder {
+    background:url(../../../image/daemon/tabs/icon/png/folder.png) no-repeat !important;
+    _background-image:url(../../../image/daemon/tabs/icon/gif/folder.gif);
+}
+.daemon-btn-foldertable {
+    background:url(../../../image/daemon/tabs/icon/png/folder_table.png) no-repeat !important;
+    _background-image:url(../../../image/daemon/tabs/icon/gif/folder_table.gif);
+}
+.daemon-btn-folderedit {
+    background:url(../../../image/daemon/tabs/icon/png/folder_edit.png) no-repeat !important;
+    _background-image:url(../../../image/daemon/tabs/icon/gif/folder_edit.gif);
+}
+.daemon-btn-folderexplore {
+    background:url(../../../image/daemon/tabs/icon/png/folder_explore.png) no-repeat !important;
+    _background-image:url(../../../image/daemon/tabs/icon/gif/folder_explore.gif);
+}
+.daemon-btn-copy {
+    background:url(../../../image/daemon/tabs/icon/png/copy.png) no-repeat !important;
+    _background-image:url(../../../image/daemon/tabs/icon/gif/copy.gif);
+}
+.daemon-btn-cut {
+    background:url(../../../image/daemon/tabs/icon/png/cut.png) no-repeat !important;
+    _background-image:url(../../../image/daemon/tabs/icon/gif/cut.gif);
+}
+.daemon-btn-paste {
+    background:url(../../../image/daemon/tabs/icon/png/paste.png) no-repeat !important;
+    _background-image:url(../../../image/daemon/tabs/icon/gif/paste.gif);
+}
+.daemon-btn-iconbig {
+    background:url(../../../image/daemon/tabs/icon/png/iconbig.png) no-repeat !important;
+    _background-image:url(../../../image/daemon/tabs/icon/gif/iconbig.gif);
+}
+.daemon-btn-iconmiddle {
+    background:url(../../../image/daemon/tabs/icon/png/iconmiddle.png) no-repeat !important;
+    _background-image:url(../../../image/daemon/tabs/icon/gif/iconmiddle.gif);
+}
+.daemon-btn-iconsmall {
+    background:url(../../../image/daemon/tabs/icon/png/iconsmall.png) no-repeat !important;
+    _background-image:url(../../../image/daemon/tabs/icon/gif/iconsmall.gif);
+}
+
+.daemon-btn-time {
+    background:url(../../../image/daemon/tabs/icon/png/time.png) no-repeat !important;
+    _background-image:url(../../../image/daemon/tabs/icon/gif/time.gif);
+}
+.daemon-btn-home {
+    background:url(../../../image/daemon/tabs/icon/png/home.png) no-repeat !important;
+    _background-image:url(../../../image/daemon/tabs/icon/gif/home.gif);
+}
+.daemon-btn-star {
+    background:url(../../../image/daemon/tabs/icon/png/star.png) no-repeat !important;
+    _background-image:url(../../../image/daemon/tabs/icon/gif/star.gif);
+}
+.daemon-btn-zoom {
+    background:url(../../../image/daemon/tabs/icon/png/zoom.png) no-repeat !important;
+    _background-image:url(../../../image/daemon/tabs/icon/gif/zoom.gif);
+}

@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.trademark.dao.InvoiceManageMapper" >
+  <resultMap id="BaseResultMap" type="com.trademark.pojo.InvoiceManage" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="is_invalid" property="isInvalid" jdbcType="BIT" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="user" property="user" jdbcType="INTEGER" />
+    <result column="type" property="type" jdbcType="INTEGER" />
+    <result column="head" property="head" jdbcType="INTEGER" />
+    <result column="trademark" property="trademark" jdbcType="INTEGER" />
+    <result column="money" property="money" jdbcType="DOUBLE" />
+    <result column="ratepaying_no" property="ratepayingNo" jdbcType="VARCHAR" />
+    <result column="mailing_address" property="mailingAddress" jdbcType="VARCHAR" />
+    <result column="postcode" property="postcode" jdbcType="INTEGER" />
+    <result column="contact_person" property="contactPerson" jdbcType="VARCHAR" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="delivery_method" property="deliveryMethod" jdbcType="INTEGER" />
+    <result column="express" property="express" jdbcType="INTEGER" />
+    <result column="expressage" property="expressage" jdbcType="DOUBLE" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="remarks" property="remarks" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, is_invalid, create_time, user, type, head, trademark, money, ratepaying_no, mailing_address, 
+    postcode, contact_person, phone, delivery_method, express, expressage, status, remarks
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from k_invoice_manage
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from k_invoice_manage
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.trademark.pojo.InvoiceManage" >
+    insert into k_invoice_manage (id, is_invalid, create_time, 
+      user, type, head, trademark, 
+      money, ratepaying_no, mailing_address, 
+      postcode, contact_person, phone, 
+      delivery_method, express, expressage, 
+      status, remarks)
+    values (#{id,jdbcType=INTEGER}, #{isInvalid,jdbcType=BIT}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{user,jdbcType=INTEGER}, #{type,jdbcType=INTEGER}, #{head,jdbcType=INTEGER}, #{trademark,jdbcType=INTEGER}, 
+      #{money,jdbcType=DOUBLE}, #{ratepayingNo,jdbcType=VARCHAR}, #{mailingAddress,jdbcType=VARCHAR}, 
+      #{postcode,jdbcType=INTEGER}, #{contactPerson,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
+      #{deliveryMethod,jdbcType=INTEGER}, #{express,jdbcType=INTEGER}, #{expressage,jdbcType=DOUBLE}, 
+      #{status,jdbcType=INTEGER}, #{remarks,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.trademark.pojo.InvoiceManage"   useGeneratedKeys="true" keyProperty="id">
+    insert into k_invoice_manage
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="isInvalid != null" >
+        is_invalid,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="user != null" >
+        user,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="head != null" >
+        head,
+      </if>
+      <if test="trademark != null" >
+        trademark,
+      </if>
+      <if test="money != null" >
+        money,
+      </if>
+      <if test="ratepayingNo != null" >
+        ratepaying_no,
+      </if>
+      <if test="mailingAddress != null" >
+        mailing_address,
+      </if>
+      <if test="postcode != null" >
+        postcode,
+      </if>
+      <if test="contactPerson != null" >
+        contact_person,
+      </if>
+      <if test="phone != null" >
+        phone,
+      </if>
+      <if test="deliveryMethod != null" >
+        delivery_method,
+      </if>
+      <if test="express != null" >
+        express,
+      </if>
+      <if test="expressage != null" >
+        expressage,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="remarks != null" >
+        remarks,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="isInvalid != null" >
+        #{isInvalid,jdbcType=BIT},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="user != null" >
+        #{user,jdbcType=INTEGER},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=INTEGER},
+      </if>
+      <if test="head != null" >
+        #{head,jdbcType=INTEGER},
+      </if>
+      <if test="trademark != null" >
+        #{trademark,jdbcType=INTEGER},
+      </if>
+      <if test="money != null" >
+        #{money,jdbcType=DOUBLE},
+      </if>
+      <if test="ratepayingNo != null" >
+        #{ratepayingNo,jdbcType=VARCHAR},
+      </if>
+      <if test="mailingAddress != null" >
+        #{mailingAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="postcode != null" >
+        #{postcode,jdbcType=INTEGER},
+      </if>
+      <if test="contactPerson != null" >
+        #{contactPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="deliveryMethod != null" >
+        #{deliveryMethod,jdbcType=INTEGER},
+      </if>
+      <if test="express != null" >
+        #{express,jdbcType=INTEGER},
+      </if>
+      <if test="expressage != null" >
+        #{expressage,jdbcType=DOUBLE},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="remarks != null" >
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.trademark.pojo.InvoiceManage" >
+    update k_invoice_manage
+    <set >
+      <if test="isInvalid != null" >
+        is_invalid = #{isInvalid,jdbcType=BIT},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="user != null" >
+        user = #{user,jdbcType=INTEGER},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=INTEGER},
+      </if>
+      <if test="head != null" >
+        head = #{head,jdbcType=INTEGER},
+      </if>
+      <if test="trademark != null" >
+        trademark = #{trademark,jdbcType=INTEGER},
+      </if>
+      <if test="money != null" >
+        money = #{money,jdbcType=DOUBLE},
+      </if>
+      <if test="ratepayingNo != null" >
+        ratepaying_no = #{ratepayingNo,jdbcType=VARCHAR},
+      </if>
+      <if test="mailingAddress != null" >
+        mailing_address = #{mailingAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="postcode != null" >
+        postcode = #{postcode,jdbcType=INTEGER},
+      </if>
+      <if test="contactPerson != null" >
+        contact_person = #{contactPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="deliveryMethod != null" >
+        delivery_method = #{deliveryMethod,jdbcType=INTEGER},
+      </if>
+      <if test="express != null" >
+        express = #{express,jdbcType=INTEGER},
+      </if>
+      <if test="expressage != null" >
+        expressage = #{expressage,jdbcType=DOUBLE},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="remarks != null" >
+        remarks = #{remarks,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.trademark.pojo.InvoiceManage" >
+    update k_invoice_manage
+    set is_invalid = #{isInvalid,jdbcType=BIT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      user = #{user,jdbcType=INTEGER},
+      type = #{type,jdbcType=INTEGER},
+      head = #{head,jdbcType=INTEGER},
+      trademark = #{trademark,jdbcType=INTEGER},
+      money = #{money,jdbcType=DOUBLE},
+      ratepaying_no = #{ratepayingNo,jdbcType=VARCHAR},
+      mailing_address = #{mailingAddress,jdbcType=VARCHAR},
+      postcode = #{postcode,jdbcType=INTEGER},
+      contact_person = #{contactPerson,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      delivery_method = #{deliveryMethod,jdbcType=INTEGER},
+      express = #{express,jdbcType=INTEGER},
+      expressage = #{expressage,jdbcType=DOUBLE},
+      status = #{status,jdbcType=INTEGER},
+      remarks = #{remarks,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  
+  <select id="queryAll" parameterType="com.trademark.pojo.InvoiceManage" resultMap="BaseResultMap">
+    select * from k_invoice_manage 
+    where 1=1
+    <if test="id!=null and id!=0">
+     and id=#{id}
+    </if>
+    <if test="user!=null and user!=o">
+     and user=#{user}
+    </if>
+    <if test="type !=null and type!=0">
+     and type=#{type}
+    </if>
+    <if test="head !=null and head !=0">
+     and head=#{head}
+    </if>
+    <if test="money!=null and money!=0.0">
+     and money=#{moey}
+    </if>
+    <if test="ratepayingNo !=null">
+     and ratepaying_no=#{ratepayingNo}
+    </if>
+    <if test="mailingAddress !=null">
+    and mailing_address like '%${mailingAddress}%'
+    </if>
+    <if test="postcode !=null ">
+     and postcode=#{postcode}
+    </if>
+    <if test="contactPerson !=null">
+    and contact_person =#{contactPerson}
+    </if>
+    <if test="phone !=null">
+    and phone=#{phone}
+    </if>
+    <if test="deliveryMethod !=null">
+    and delivery_method=#{deliveryMethod}
+    </if>
+    <if test="express!=null">
+     and  express=#{express}
+    </if>
+    <if test="expressage!=null and expressage!=0.0">
+     and expressage=#{expressage}
+    </if>
+    <if test="status !=null">
+    and status=#{status}
+    </if>
+    <if test="checkUser !=null and checkUser!=0">
+      and check_user=#{checkUser}
+    </if>
+    <if test="checkTime !=null">
+     and check_time=#{checkTime}
+    </if>
+    order by 
+	create_time desc
+	<if test="offSet!=null and pageSize!=null">
+	limit ${offSet},${pageSize}
+	</if>
+  </select>
+</mapper>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+    
+    
+    <bean id="druid-stat-interceptor"
+    	class="com.alibaba.druid.support.spring.stat.DruidStatInterceptor">
+    </bean>
+
+	<bean id="druid-stat-pointcut" class="org.springframework.aop.support.JdkRegexpMethodPointcut"
+	    scope="prototype">
+	    <property name="patterns">
+	        <list>
+	            <value>com.trademark.*</value>
+	        </list>
+	    </property>
+	</bean>
+	
+	<aop:config>
+	    <aop:advisor advice-ref="druid-stat-interceptor"
+	        pointcut-ref="druid-stat-pointcut" />
+	</aop:config>
+    
+    <aop:aspectj-autoproxy />      
+	<context:annotation-config />
+   
+    <!-- proxy-target-class属性值决定是基于接口的还是基于类的代理被创建。
+	如果proxy-target-class 属性值被设置为true，那么基于类的代理将起作用（这时需要cglib库）。
+	如果proxy-target-class属值被设置为false或者这个属性被省略，那么标准的JDK 基于接口的代理 -->
+	 <aop:config proxy-target-class="true">
+	 <!--  <aop:aspect ref="sessionAOP">
+	   <aop:around method="updateCR" pointcut="execution (* com.emailtu.ruby.http.action..*.*(..))"/>
+	  </aop:aspect> -->
+	 </aop:config>  
+
+ 	<bean id="sessionAOP" class="com.trademark.controller.aop.SessionAOP" />
+   
+</beans>

@@ -1,0 +1,124 @@
+@import url(http://fonts.useso.com/css?family=Raleway:200,500,700,800);
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon.eot?yrquyl');
+	src:url('../fonts/icomoon.eot?#iefixyrquyl') format('embedded-opentype'),
+		url('../fonts/icomoon.woff?yrquyl') format('woff'),
+		url('../fonts/icomoon.ttf?yrquyl') format('truetype'),
+		url('../fonts/icomoon.svg?yrquyl#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body, html { font-size: 100%; 	padding: 0; margin: 0;}
+.constellation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+/* Reset */
+*,
+*:after,
+*:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+body{
+	background: white;
+	color: #404d5b;
+	font-weight: 500;
+	font-size: 1.05em;
+	font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", "FontAwesome", sans-serif;
+}
+a{color: #2fa0ec;text-decoration: none;outline: none;}
+a:hover,a:focus{color:#74777b;};
+
+.container{
+	margin: 0 auto;
+	text-align: center;
+	overflow: hidden;
+}
+
+
+.fl{float:left;}
+.fr{float:right;}
+.header_nav{font-family:"微软雅黑";position: absolute;top:0;width:100%;text-align: center;}
+
+.language{padding:6px 15px;border:1px solid #fff;color:white;background: rgba(255,255,255,0.1);cursor:pointer;font-size: 14px;font-family: sans-serif;}
+.in_language{background: white;color:#333}
+.language:hover{background: white;color:#333}
+@media (min-width: 1200px){
+	.w1170{width:1170px;display:inline-block;}
+	.w780{width:780px;}
+	.w390{width:390px;padding:50px 0;}
+	.logo{height:25px;}
+	.w560{width:560px;}
+	.leader{width:128px}
+}
+@media (max-width: 992px){
+	.w1170{width:960px;display:inline-block;}
+	.w780{width:640px;}
+	.w390{width:320px;padding:50px 0;}
+	.logo{height:25px;}
+	.w560{width:560px;}
+	.leader{width:100px}
+}
+@media (max-width: 575px){
+	.w1170{width:98%;}
+	.logo{height:20px;}
+	.w780{width:100%;}
+	.w390{width:100%;padding:50px 0;}
+	.w560{width:100%;margin-top:40px}
+	.leader{width:100px}
+}
+.container{background:#333333;}
+.main{text-align: center;color: #666;padding-top: 20px;font-family: "Open Sans",sans-serif;background: background-color: #f8f8f8;}
+
+.w390 img{width:200px;}
+h2{font-size:36px;}
+p{font-size:15px;color: #616771;font-weight: 100px;text-align: left;line-height: 28px;margin-bottom: 10px;margin-top: 0}
+.main section h4{font-family:"Open Sans",sans-serif;text-align: left;font-size: 28px;color: #37404d;margin: 20px 0;}
+.div_block{margin:20px 0;border-bottom:1px solid #f2f2f2;}
+h5{font-size:16px;margin:0;text-align: left;margin-bottom: 10px;color: #37404d;}
+.download{padding:20px 35px;font-size:16px;background: #fbb03b;color:white;margin:0 auto;border:0;cursor: pointer;left: 45%;border-radius:5px;margin-top:30px}
+.intro{color:white;font-size:32px;left: 30%;left:35%;}
+
+.title{font-size: 14px;color: #999;}
+.leader_intro .fl div:last-child,.leader_intro .fr div:last-child{font-size:14px;color:#666;margin-top:20px;line-height:22px;text-align:left}
+.marTop20{margin-top:20px;}
+
+/* 动画 */
+.introImg img{opacity:0; animation:move 1.5s forwards; animation-play-state:paused;}
+.main .move img{ animation-play-state:running;}
+@keyframes move{
+	from{ opacity:0;transform:scale(0,0); }
+	to{ opacity:1; transform:scale(1,1); }
+}

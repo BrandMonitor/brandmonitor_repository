@@ -1,0 +1,184 @@
+*{font-size:12px;} 
+.x-btn-default-small .x-btn-inner,  .x-tree-node-text, .x-btn-default-medium .x-btn-inner, .x-btn-default-large .x-btn-inner, .x-btn-default-toolbar-small .x-btn-inner, .x-btn-default-toolbar-medium .x-btn-inner, .x-btn-default-toolbar-large .x-btn-inner, .x-menu-item-text, .x-html-editor-tb .x-font-select, .x-panel-header-default, .x-panel-header-text-default, .x-panel-header-default-framed, .x-tip-header, .x-tip-body, .x-form-invalid-tip-body, .x-tip-header-text, .x-progress-text, .x-toolbar, .x-toolbar .x-form-item-label, .x-toolbar .x-toolbar-text, .x-window-header-text-default, .x-tab-bar, .x-tab button, .x-grid-rowbody, .x-grid-row .x-grid-cell, .x-grid-group-title, .x-grid-row-editor .x-form-field, .x-grid-row-editor .x-form-display-field, .x-form-invalid-under, .x-fieldset-header, .x-column-header, .x-mask-msg div, .x-btn-group-header-text-default-framed, table.x-datepicker-inner a, .x-monthpicker-item, .x-dd-drag-ghost
+{
+    font-size: 12px;
+}
+.x-column-header
+{
+    text-shadow:0 0 0 rgba(255, 255, 255, 0.3);
+}
+.x-border-layout-ct{
+    background-color: #323639 !important;
+}
+
+
+body {
+    overflow:hidden;
+}
+
+.ms-bg-light{
+    background-color: #f1f1f1 !important;
+}
+.ms-spacing-light{
+    background-color: #000000 !important;
+}
+.ms-left-light{
+    border-bottom: 1px solid #393939;
+    border-top: 1px solid #4E4E4E;
+    background-color: #444444 !important;
+}
+.ms-top-light{
+    background: #323639;
+}
+.ms-bg-button {
+    background-color: #323639;
+    border:1px #323639 solid;
+}
+.ms-bg-footer {
+    background-color: #323639;
+    color: gray;
+    font-size: 10px !important;
+    font-family:"Arial";
+    text-align: right;
+}
+.ms-bg-deep{
+    background-color: #f1f1f1;
+}
+
+
+
+/****************************头部logo ****************************/
+#phones {
+    background-color: #323639;
+    display: block;
+    height: auto;
+    position: relative;
+    text-shadow: 0 1px 0 #323639;
+}
+#phones div.phone img {
+    margin-bottom: 1px;
+}
+#phones div.phone {
+    border-top: 1px solid rgba(0, 0, 0, 0);
+    color: #FFFFFF;
+    cursor: pointer;
+    float: left;
+    font-family: "Helvetica Neue",sans-serif;
+    font-size: 20px;
+    height: 130px;
+    line-height: 14px;
+    margin: 5px;
+    overflow: hidden;
+    padding: 8px 8px;
+    text-align: center;
+    width: 80px;
+}
+.x-ie6 #phones div.phone, .x-ie7 #phones div.phone, .x-ie8 #phones div.phone {
+    border-top: medium none;
+    margin: 2px;
+    padding: 3px 2px;
+}
+#phones div.phone-hover {
+    background-color: #4E4E4E;
+}
+#phones .x-item-selected {
+    color: #f8fa38 !important;
+    background-color: #6a6a6b !important;
+}
+#phones div.phone strong {
+    display: block;
+}
+#phones div.phone span {
+    display: block;
+}
+
+
+/****************************左边菜单 ****************************/
+#leftPanel {
+    background-color: #444444;
+    display: block;
+    height: auto;
+    position: relative;
+    text-shadow: 0 1px 0 #323639;
+}
+#leftPanel div.phone img {
+    margin-bottom: 1px;
+}
+#leftPanel div.phone {
+    border-top: 1px solid rgba(0, 0, 0, 0);
+    color: #AAAAAA;
+    cursor: pointer;
+    font-family: "Helvetica Neue",sans-serif;
+    font-size: 20px;
+    height: 40px;
+    line-height:40px;
+    overflow: hidden;
+    vertical-align: middle;
+    text-align: center;
+    width: 180px;
+    border-bottom: 1px solid #333333;
+    border-top: 1px solid #4E4E4E;
+}
+.x-ie6 #leftPanel div.phone, .x-ie7 #phones div.phone, .x-ie8 #leftPanel div.phone {
+    border-top: medium none;
+}
+#leftPanel div.phone-hover {
+    background-color: #4E4E4E;
+}
+#leftPanel .x-item-selected {
+    color: #f8fa38 !important;
+    background: url("../../../image/daemon/menu/menu-active.png") no-repeat scroll right center rgba(0, 0, 0, 0) !important;
+    background-color: #005492 !important;
+}
+#leftPanel div.phone strong {
+    color: #AAAAAA;
+}
+#leftPanel div.phone span {
+}
+
+/****************************主页汇总 ****************************/
+#indexAll {
+    background-color: #f1f1f1;
+    display: block;
+    height: auto;
+    position: relative;
+    text-shadow: 0 1px 0 #f1f1f1;
+}
+#indexAll div.phone img {
+    margin-bottom: 1px;
+}
+#indexAll div.phone {
+    border-top: 1px solid rgba(0, 0, 0, 0);
+    color: #6a6a6b;
+    cursor: pointer;
+    float: left;
+    font-family: "Helvetica Neue",sans-serif;
+    font-size: 20px;
+    height: 250px;
+    line-height: 14px;
+    margin: 5px;
+    overflow: hidden;
+    padding: 8px 8px;
+    text-align: center;
+    width: 150px;
+}
+.x-ie6 #indexAll div.phone, .x-ie7 #phones div.phone, .x-ie8 #indexAll div.phone {
+    border-top: medium none;
+    margin: 2px;
+    padding: 3px 2px;
+}
+#indexAll div.phone-hover {
+    background-color: #4E4E4E;
+}
+#indexAll .x-item-selected {
+    color: #f8fa38 !important;
+    background-color: #6a6a6b !important;
+}
+#indexAll div.phone strong {
+    display: block;
+}
+#indexAll div.phone span {
+    line-height: 55px;
+    font-size: 45px;
+    display: block;
+}

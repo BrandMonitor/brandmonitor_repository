@@ -1,0 +1,241 @@
+
+.fl{
+    float: left;
+}
+
+.clear{
+    clear: both;
+}
+
+#title .zhaopin_title img{
+    width: 100%;
+    max-width: 100%;
+}
+
+
+
+#myCarousel .carousel-inner .item .zhaopin_intro_item{
+    width: 800px;
+    margin: 0 auto;
+    height: 200px;
+}
+
+#myCarousel .carousel-inner .item .zhaopin_intro_item .zhaopin_intro_logo{
+    width: 100px;
+    margin: 0 auto;
+}
+
+#myCarousel .carousel-inner .item .zhaopin_intro_item .zhaopin_intro_logo img{
+    border-radius:50%;
+    overflow:hidden;
+    width: 100px;
+    height: 100px;
+}
+
+#myCarousel .carousel-inner .item .zhaopin_intro_item .zhaopin_intro_content{
+    text-align: center;
+    margin: 30px;
+}
+
+#myCarousel .carousel-inner .item .zhaopin_intro_item .zhaopin_intro_content .zhaopin_people_name{
+    font-size: 24px;
+    color: #4a4a4a;
+}
+
+.zhaopin_people_hua{
+    margin-top: 24px;
+    overflow: hidden;
+}
+
+.zhaopin_people_hua .zhaopin_left_quote img{
+    display: table-cell;
+    float: left;
+    margin-top: -5px;
+}
+
+.zhaopin_people_hua .zhaopin_middle_content{
+    display: table-cell;
+    margin-left: 40px;
+    font-size: 16px;
+    color: #949494;
+    float: left;
+}
+
+.zhaopin_people_hua .zhaopin_middle_content p{
+    clear: both;
+    line-height: 30px;
+    text-align: center;
+}
+
+.zhaopin_people_hua .zhaopin_right_quote{
+    display: table-cell;
+    float: right;
+    margin-top: 15px;
+}
+
+#myCarousel a{
+    width: 60px;
+    background-color: #ffffff;
+    margin-top: 80px;
+    background-image: url("");
+}
+
+#myCarousel a img{
+    width: 60px;
+    height: 86px;
+}
+
+#content hr{
+    margin-top: 22px;
+    border-bottom:1px dashed #000000;
+    color: #dadada;
+}
+
+#job{
+    width: 100%;
+    background-color: #eff3f9;
+}
+
+#job .jobLists{
+    width: 1080px;
+    margin: 0 auto;
+    height: auto;
+    border: 1px dashed #f9f9f9;
+    overflow: hidden;
+}
+
+#job .jobLists .job_icon{
+    width: 76px;
+    margin: 26px auto 0px;
+}
+
+#job .jobLists .job_icon img{
+    width: 76px;
+    height: 40px;
+}
+
+#job .jobLists .whole_job{
+    float: left;
+    background-color: #ffffff;
+    margin-top: -28px;
+    margin-bottom: 100px;
+    -moz-box-shadow:0 0 12px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow:0 0 12px rgba(0, 0, 0, 0.2);
+    box-shadow:0 0 12px rgba(0, 0, 0, 0.2);
+}
+
+#job .jobLists .whole_job .jobList{
+    margin-bottom: 100px;
+}
+
+#job .jobLists .whole_job .zhaopin_way .zhaopin_name{
+    color: #323232;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 42px;
+}
+
+#job .jobLists .whole_job .zhaopin_way .zhaopin_email{
+    color: red;
+    font-size: 24px;
+    margin-top: 16px;
+    text-align: center;
+}
+
+#job .jobLists .whole_job .jon_line{
+    width: 1080px;
+    margin: 10px auto 38px;
+    background: #fff url(../../img/people_line.png) no-repeat center top;
+    background-size: cover;
+    height: 1px;
+    opacity: 0.5;
+}
+
+.jobList .tabs{
+    list-style: none;
+    width: 980px;
+    margin: 0 auto;
+}
+
+.tab{
+    width: 133px;
+    display: inline-block;
+    text-align: center;
+    height: 62px;
+    line-height: 62px;
+    border: 1px solid #f5f5f5;
+    text-decoration:none;
+    padding-left: 0.5px;
+    font-size: 18px;
+}
+
+.active{
+    background-color: #23b1d1;
+    font-size: 20px;
+    color: white;
+}
+
+.active a{
+    color: #ffffff;
+}
+
+.jobList .tabs .tab a{
+    width: 133.5px;
+}
+
+#bottom{
+    width: 500px;
+}
+
+#bottom .bottom_type{
+    margin-top: 400px;
+}
+
+.job_info{
+    overflow: hidden;
+    width: 980px;
+    margin: 0 auto;
+}
+
+.job_detail_left{
+    margin-top: 31px;
+    line-height: 1.5;
+    width: 458px;
+    display: inline-block;
+    float: left;
+}
+
+.job_detail_right{
+    margin-top: 31px;
+    line-height: 1.5;
+    width: 458px;
+    margin-left: 60px;
+    float: left;
+}
+
+.job_name{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.job_single_info{
+    line-height: 30px;
+    font-size: 14px;
+    color: #6f6f6f;
+}
+
+.job_single_info .job_resp_name{
+    margin-top: 10px;
+}
+
+.job_single_info .job_resp_content{
+    margin-top: 10px;
+}
+
+.top80{
+    margin-top: 30px;
+}
+.nav dd a{
+	text-decoration: none;
+}

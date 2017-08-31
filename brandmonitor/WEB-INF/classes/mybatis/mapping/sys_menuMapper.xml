@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.trademark.dao.SysMenuDao">
+
+      <resultMap id="BaseResultMap" type="com.trademark.pojo.SysMenu" >
+	    <id column="menuId" property="menuId" jdbcType="INTEGER" />
+	    <result column="code" property="code" jdbcType="VARCHAR" />
+	    <result column="p_code" property="pCode" jdbcType="VARCHAR" />
+	    <result column="title" property="title" jdbcType="VARCHAR" />
+	    <result column="comment" property="comment" jdbcType="VARCHAR" />
+	    <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+	    <result column="icon" property="icon" jdbcType="VARCHAR" />
+	    <result column="url" property="url" jdbcType="VARCHAR" />
+	    <result column="seat" property="seat" jdbcType="INTEGER" />
+	  </resultMap>
+	
+	
+	<!-- 新增 -->
+	<insert id="save" parameterType="com.trademark.pojo.SysMenu" useGeneratedKeys="true" keyProperty="menuId" >
+		insert into k_sys_menu (menuId,code,p_code,title,comment,create_date,icon,url,seat) values (#{menuId},#{code},#{pCode},#{title},#{comment},#{createDate},#{icon},#{url},#{seat})
+	</insert>
+	
+	<!-- 批量新增 -->
+	<insert id="saveList" parameterType="Map">
+		insert into
+		k_sys_menu (menuId,code,p_code,title,comment,create_date,icon,url,seat) 
+		values
+		<foreach collection="list" item="entity" index="index"
+			separator=",">
+			(#{entity.menuId},#{entity.code},#{entity.pCode},#{entity.title},#{entity.comment},#{entity.createDate},#{entity.icon},#{entity.url},#{entity.seat})
+		</foreach>
+	</insert>
+	
+	<!-- 更新 -->
+	<update id="update" parameterType="com.trademark.pojo.SysMenu">
+		update k_sys_menu set code=#{code},p_code=#{pCode},title=#{title},comment=#{comment},create_date=#{createDate},icon=#{icon},url=#{url},seat=#{seat} where id=#{id}
+	</update>
+	
+	<!-- 更新状态 -->
+	<update id="updateStatus" parameterType="map">
+		update k_sys_menu set status=${newStatus} where id=#{id} and status=${oldStatus}
+	</update>
+	
+	<!-- 更新 -->
+	<select id="selectAll" resultMap="BaseResultMap">
+		select * from k_sys_menu
+	</select>
+	
+	<!-- 根据id查询一条记录-->
+	<select id="selectOneById" parameterType="int"  resultType="com.trademark.pojo.SysMenu">
+		select * from k_sys_menu where id=#{id} limit 1
+	</select>
+	
+	<!-- 删除 -->
+	<delete id="delete" parameterType="int">
+		delete from k_sys_menu where id=#{id} and status=1
+	</delete>
+	
+	<!-- 删除所有数据-->
+	<delete id="deleteAll" parameterType="int">
+		delete from k_sys_menu 
+	</delete>
+	
+	<!-- 分页显示  -->
+	<select id="list"  parameterType="map" resultType="com.trademark.pojo.SysMenu">
+		select * from 
+			k_sys_menu
+		order by 
+			create_time desc
+		limit ${offSet},${pageSize}
+	</select>
+	
+	<!-- 总条数 -->
+	<select id="countAll" resultType="int">
+		select count(*) from k_sys_menu 
+	</select>
+	
+</mapper>

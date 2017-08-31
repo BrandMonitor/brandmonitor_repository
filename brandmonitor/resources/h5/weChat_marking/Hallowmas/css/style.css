@@ -1,0 +1,329 @@
+<style>
+@import url(http://fonts.googleapis.com/css?family=Varela+Round);
+
+html, body {margin: 0 auto;padding:0 auto; overflow: hidden;}
+
+.slides {
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+}
+
+.slides * {
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.slides input { display: none; }
+
+.slide-container { display: block; }
+
+.slide,.slideing{
+    top: 0;
+    opacity: 0;
+    width: 100%;
+    display: block;
+    position: absolute;
+
+    transform: scale(0);
+
+    transition: all .7s ease-in-out;
+}
+
+.slide img {
+    width: 100%;
+    min-height: 100%;
+}
+
+
+.nav label {
+    height: 100%;
+    display: none;
+    position: relative;
+    z-index: 9;
+    cursor: pointer;
+    transition: opacity .2s;
+    color: #000;
+    text-align: justify;
+    font-family:"黑体"
+}
+.end_nav label {
+    height: 100%;
+    display: none;
+    position: relative;
+    z-index: 9;
+    cursor: pointer;
+    transition: opacity .2s;
+    color: #000;
+    text-align: justify;
+    font-family:"黑体"
+}
+
+.slide:hover + .nav label { opacity: 1; }
+
+.nav label:hover { opacity: 1; }
+
+.nav .next { right: 0; }
+
+.slide:hover + .end_nav label { opacity: 1; }
+
+.end_nav label:hover { opacity: 1; }
+
+.end_nav .next { right: 0; }
+
+input:checked + .slide-container  .slide {
+    opacity: 1;
+
+    transform: scale(1);
+
+    transition: opacity 1s ease-in-out;
+}
+
+input:checked + .slide-container .nav label { display: block; }
+input:checked + .slide-container .end_nav label { display: block; }
+.nav-dots {
+	width: 100%;
+	bottom: 9px;
+	height: 11px;
+	display: block;
+	position: absolute;
+	text-align: center;
+}
+
+.nav-dots .nav-dot {
+	top: -5px;
+	width: 11px;
+	height: 11px;
+	margin: 0 4px;
+	position: relative;
+	border-radius: 100%;
+	display: inline-block;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+.nav-dots .nav-dot:hover {
+	cursor: pointer;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+input#img-1:checked ~ .nav-dots label#img-dot-1,
+input#img-2:checked ~ .nav-dots label#img-dot-2,
+input#img-3:checked ~ .nav-dots label#img-dot-3,
+input#img-4:checked ~ .nav-dots label#img-dot-4,
+input#img-5:checked ~ .nav-dots label#img-dot-5,
+input#img-6:checked ~ .nav-dots label#img-dot-6 {
+	background: rgba(0, 0, 0, 0.8);
+}
+
+div.nav{
+	position: absolute;
+	z-index: 9;
+	font-family: "黑体";
+	/*font-size:15px ;*/
+	text-align: center;
+	vertical-align: middle;
+	left:47px;
+	right:47px;
+	top:130px;
+	font-weight: bold;
+	line-height: 20px;
+}
+
+div.end_nav{
+	position: absolute;
+	z-index: 9;
+	font-family: "黑体";
+	/*font-size:15px ;*/
+	vertical-align: middle;
+	left:47px;
+	right:47px;
+	top:130px;
+	font-weight: bold;
+	line-height: 20px;
+}
+
+label span{
+	position: absolute;
+	z-index: 9;
+	font-family: "黑体";
+	font-size:17px ;
+	color:red;
+	font-weight:bold;
+}
+
+div.nav .question{
+	font-size: 15px;
+	font-weight: bold;
+}
+div.end_nav .question{
+	font-size: 15px;
+	font-weight: bold;
+}
+div.nav .answer{
+	opacity: 0.8;
+	line-height: 24px;
+	background-color:rgba(0,0,0,0.5);
+	/*border:1px solid #294941;*/
+	/*box-shadow: 0px 0px 15px rgb(119, 119, 119);*/
+	padding:5px 10px 0px 10px;
+	margin-top:8px;
+	color: white;
+}
+div.end_nav .answer{
+	opacity: 0.8;
+	line-height: 24px;
+	background-color:rgba(0,0,0,0.5);
+	/*border:1px solid #294941;*/
+	/*box-shadow: 0px 0px 15px rgb(119, 119, 119);*/
+	padding:5px 10px 0px 10px;
+	margin-top:8px;
+}
+
+div.nav .answer:hover{
+	line-height: 24px;
+	background-color:rgba(253,128,3,1);
+	/*border:1px solid #294941;*/
+	/*box-shadow: 0px 0px 15px rgb(119, 119, 119);*/
+	padding:5px 0 0px 10px;
+	margin-top:5px;
+}
+
+div.end_nav .answer:hover{
+	line-height: 24px;
+	background-color:rgba(253,128,3,1);
+	/*border:1px solid #294941;*/
+	/*box-shadow: 0px 0px 15px rgb(119, 119, 119);*/
+	padding:5px 0 0px 10px;
+	margin-top:5px;
+}
+.button{
+	font-size: 20px;
+	color:rgba(251,242,7,0.8);
+	background-color:rgba(0,0,0,0.5);
+	border:1px solid #4b4b4b;
+	padding:8px 10px 8px 10px;
+	margin:50px 5px 0 20px;
+	float: left;
+}
+
+.button_red{
+	font-size: 20px;
+	color:#fff;
+	background-color:rgb(160,0,0);
+	border:1px solid #a00606;
+	padding:8px 10px 8px 10px;
+	margin:50px 5px 0 20px;
+	float: left;
+}
+
+.anate{
+	-webkit-animation:moveToRight ease 1s both infinite;
+	animation:moveToRight ease 1s both infinite;
+}
+
+
+@-webkit-keyframes moveToRight {
+	from { }
+	to { -webkit-transform: scale(0.9,0.9); }
+}
+@keyframes moveToRight {
+	from { }
+	to { -webkit-transform: scale(0.9,0.9); transform: scale(0.9,0.9); }
+}
+
+.music-play,.music-stop{
+	position:absolute;
+	top:15px;
+	right:15px;
+	z-index:90;
+	width:34px;
+	height:34px;
+	opacity:1}
+	
+.music-stop{
+	display:none;
+	/*background:url(../../../../../resources/h5/img/yl.png) no-repeat 0px 0px;*/
+	background-size:34px 34px}
+
+.music-play img{
+	/*background:url(../../../../../resources/h5/img/yl.png) no-repeat 0px 0px;*/
+	background-size:34px 34px;
+	}
+
+.music_animation{
+	-webkit-transform-origin:center center;
+	-webkit-animation:music-rotate 6s linear infinite
+}
+	
+@-webkit-keyframes music-rotate{
+	0%{-webkit-transform:rotate(0)}
+	100%{-webkit-transform:rotate(720deg)}}
+	
+@keyframes music-rotate{
+	0%{-webkit-transform:rotate(0)}
+	100%{-webkit-transform:rotate(720deg)}}
+	
+label{
+	margin-bottom: 10px;
+}
+.survival{
+	display: inline-block;
+	text-align: center;
+	position: relative;
+}
+.user img{
+	border-radius:50px ;
+	border-radius: 50px;
+	float: left;
+	margin-right:10px;
+	width:55px;
+	height:55px;
+}
+.user{
+	float: left;
+}
+.user div{
+	margin-right:15px;
+}
+.nickname{
+	width:100%;
+	font-size: 8px;
+	word-wrap:break-word;
+	text-align: center;
+}
+.title{
+	position: absolute;
+	z-index: 9;
+	font-family: "黑体";
+	font-size:17px ;
+	color:red;
+	font-weight:bold;
+	display: block;
+}
+
+.clearcss{
+	clear: both;
+}
+
+.redfont{
+	color:red;
+	font-weight: bold;
+}
+table{
+	width:100%;
+	border:none;
+	color: white;
+	background-color: rgba(160,0,0,0.8);
+}
+td img{
+	width:34px;
+	height: 34px;
+}
+</style>

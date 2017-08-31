@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.trademark.dao.TrademarkOrderMapper" >
+  <resultMap id="BaseResultMap" type="com.trademark.pojo.TrademarkOrder" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="is_invalid" property="isInvalid" jdbcType="BIT" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="user" property="user" jdbcType="INTEGER" />
+    <result column="type" property="type" jdbcType="INTEGER" />
+    <result column="proposer" property="proposer" jdbcType="VARCHAR" />
+    <result column="trademark_name" property="trademarkName" jdbcType="VARCHAR" />
+    <result column="trademark_type" property="trademarkType" jdbcType="INTEGER" />
+    <result column="style_black" property="styleBlack" jdbcType="VARCHAR" />
+    <result column="style_colour" property="styleColour" jdbcType="VARCHAR" />
+    <result column="explains" property="explains" jdbcType="VARCHAR" />
+    <result column="entrust" property="entrust" jdbcType="VARCHAR" />
+    <result column="contact_person" property="contactPerson" jdbcType="VARCHAR" />
+    <result column="phone" property="phone" jdbcType="INTEGER" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="money" property="money" jdbcType="DOUBLE" />
+    <result column="is_forced" property="isForced" jdbcType="BIT" />
+    <result column="pay_type" property="payType" jdbcType="INTEGER" />
+    <result column="is_payment" property="isPayment" jdbcType="BIT" />
+    <result column="check_status" property="checkStatus" jdbcType="INTEGER" />
+    <result column="check_user" property="checkUser" jdbcType="INTEGER" />
+    <result column="check_time" property="checkTime" jdbcType="TIMESTAMP" />
+    <result column="update_user" property="updateUser" jdbcType="INTEGER" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="remarks" property="remarks" jdbcType="VARCHAR" />
+    <result column="trade_no" property="tradeNo" jdbcType="VARCHAR" />
+    <result column="out_trade_no" property="outTradeNo" jdbcType="VARCHAR" />
+    
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, is_invalid, create_time, user, type, proposer, trademark_name, trademark_type, 
+    style_black, style_colour, explains, entrust, contact_person, phone, email, money, 
+    pay_type, is_payment, check_status, check_user, check_time, update_user, update_time, 
+    remarks,is_forced,trade_no,out_trade_no
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from k_trademark_order
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  
+  <select id="selectByAll" resultMap="BaseResultMap" parameterType="com.trademark.pojo.TrademarkOrder" >
+    select 
+    <include refid="Base_Column_List" />
+    from k_trademark_order
+    <where>
+    1 = 1
+        <if test="id != null">
+         and id = #{id,jdbcType=INTEGER}
+        </if>
+       <if test="isInvalid != null" >
+        and is_invalid = #{isInvalid,jdbcType=BIT}
+      </if>
+      <if test="createTime != null" >
+        and create_time = #{createTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="user != null" >
+        and user = #{user,jdbcType=INTEGER}
+      </if>
+      <if test="type != null" >
+        and type = #{type,jdbcType=INTEGER}
+      </if>
+      <if test="proposer != null" >
+        and proposer = #{proposer,jdbcType=VARCHAR}
+      </if>
+      <if test="trademarkName != null" >
+        and trademark_name = #{trademarkName,jdbcType=VARCHAR}
+      </if>
+      <if test="trademarkType != null" >
+        and trademark_type = #{trademarkType,jdbcType=INTEGER}
+      </if>
+      <if test="styleBlack != null" >
+        and style_black = #{styleBlack,jdbcType=VARCHAR}
+      </if>
+      <if test="styleColour != null" >
+        and style_colour = #{styleColour,jdbcType=VARCHAR}
+      </if>
+      <if test="explains != null" >
+        and explains = #{explains,jdbcType=VARCHAR}
+      </if>
+      <if test="entrust != null" >
+        and entrust = #{entrust,jdbcType=VARCHAR}
+      </if>
+      <if test="contactPerson != null" >
+        and contact_person = #{contactPerson,jdbcType=VARCHAR}
+      </if>
+      <if test="phone != null" >
+        and phone = #{phone,jdbcType=INTEGER}
+      </if>
+      <if test="email != null" >
+        and email = #{email,jdbcType=VARCHAR}
+      </if>
+      <if test="money != null" >
+        and money = #{money,jdbcType=DOUBLE}
+      </if>
+      <if test="payType != null" >
+        and pay_type = #{payType,jdbcType=INTEGER}
+      </if>
+      <if test="isPayment != null" >
+        and is_payment = #{isPayment,jdbcType=BIT}
+      </if>
+      <if test="checkStatus != null" >
+        and check_status = #{checkStatus,jdbcType=INTEGER}
+      </if>
+      <if test="checkUser != null" >
+        and check_user = #{checkUser,jdbcType=INTEGER}
+      </if>
+      <if test="checkTime != null" >
+        and check_time = #{checkTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="updateUser != null" >
+        and update_user = #{updateUser,jdbcType=INTEGER}
+      </if>
+      <if test="updateTime != null" >
+       and update_time = #{updateTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="remarks != null" >
+       and remarks = #{remarks,jdbcType=VARCHAR}
+      </if>
+      <if test="isForced != null" >
+       and is_forced = #{isForced,jdbcType=BIT}
+      </if>
+      <if test="tradeNo != null" >
+       and trade_no = #{tradeNo,jdbcType=VARCHAR}
+      </if>
+      <if test="outTradeNo != null" >
+       and out_trade_no = #{outTradeNo,jdbcType=VARCHAR}
+      </if>
+    </where>
+    <if test="page != null and pageSize != null">
+      limit #{page},#{pageSize}
+    </if>
+  </select>
+  
+  <select id="selectCount" resultType="Integer" parameterType="com.trademark.pojo.TrademarkOrder" >
+    select 
+    count(id)
+    from k_trademark_order
+    <where>
+    1 = 1
+        <if test="id != null">
+         and id = #{id,jdbcType=INTEGER}
+        </if>
+       <if test="isInvalid != null" >
+        and is_invalid = #{isInvalid,jdbcType=BIT}
+      </if>
+      <if test="createTime != null" >
+        and create_time = #{createTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="user != null" >
+        and user = #{user,jdbcType=INTEGER}
+      </if>
+      <if test="type != null" >
+        and type = #{type,jdbcType=INTEGER}
+      </if>
+      <if test="proposer != null" >
+        and proposer = #{proposer,jdbcType=VARCHAR}
+      </if>
+      <if test="trademarkName != null" >
+        and trademark_name = #{trademarkName,jdbcType=VARCHAR}
+      </if>
+      <if test="trademarkType != null" >
+        and trademark_type = #{trademarkType,jdbcType=INTEGER}
+      </if>
+      <if test="styleBlack != null" >
+        and style_black = #{styleBlack,jdbcType=VARCHAR}
+      </if>
+      <if test="styleColour != null" >
+        and style_colour = #{styleColour,jdbcType=VARCHAR}
+      </if>
+      <if test="explains != null" >
+        and explains = #{explains,jdbcType=VARCHAR}
+      </if>
+      <if test="entrust != null" >
+        and entrust = #{entrust,jdbcType=VARCHAR}
+      </if>
+      <if test="contactPerson != null" >
+        and contact_person = #{contactPerson,jdbcType=VARCHAR}
+      </if>
+      <if test="phone != null" >
+        and phone = #{phone,jdbcType=INTEGER}
+      </if>
+      <if test="email != null" >
+        and email = #{email,jdbcType=VARCHAR}
+      </if>
+      <if test="money != null" >
+        and money = #{money,jdbcType=DOUBLE}
+      </if>
+      <if test="payType != null" >
+        and pay_type = #{payType,jdbcType=INTEGER}
+      </if>
+      <if test="isPayment != null" >
+        and is_payment = #{isPayment,jdbcType=BIT}
+      </if>
+      <if test="checkStatus != null" >
+        and check_status = #{checkStatus,jdbcType=INTEGER}
+      </if>
+      <if test="checkUser != null" >
+        and check_user = #{checkUser,jdbcType=INTEGER}
+      </if>
+      <if test="checkTime != null" >
+        and check_time = #{checkTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="updateUser != null" >
+        and update_user = #{updateUser,jdbcType=INTEGER}
+      </if>
+      <if test="updateTime != null" >
+       and update_time = #{updateTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="remarks != null" >
+       and remarks = #{remarks,jdbcType=VARCHAR}
+      </if>
+      <if test="isForced != null" >
+       and is_forced = #{isForced,jdbcType=BIT}
+      </if>
+      <if test="tradeNo != null" >
+       and trade_no = #{tradeNo,jdbcType=VARCHAR}
+      </if>
+      <if test="outTradeNo != null" >
+       and out_trade_no = #{outTradeNo,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </select>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from k_trademark_order
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.trademark.pojo.TrademarkOrder" >
+    insert into k_trademark_order (id, is_invalid, create_time, 
+      user, type, proposer, 
+      trademark_name, trademark_type, style_black, 
+      style_colour, explains, entrust, 
+      contact_person, phone, email, 
+      money, pay_type, is_payment, 
+      check_status, check_user, check_time, 
+      update_user, update_time, remarks,is_forced
+      )
+    values (#{id,jdbcType=INTEGER}, #{isInvalid,jdbcType=BIT}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{user,jdbcType=INTEGER}, #{type,jdbcType=INTEGER}, #{proposer,jdbcType=VARCHAR}, 
+      #{trademarkName,jdbcType=VARCHAR}, #{trademarkType,jdbcType=INTEGER}, #{styleBlack,jdbcType=VARCHAR}, 
+      #{styleColour,jdbcType=VARCHAR}, #{explains,jdbcType=VARCHAR}, #{entrust,jdbcType=VARCHAR}, 
+      #{contactPerson,jdbcType=VARCHAR}, #{phone,jdbcType=INTEGER}, #{email,jdbcType=VARCHAR}, 
+      #{money,jdbcType=DOUBLE}, #{payType,jdbcType=INTEGER}, #{isPayment,jdbcType=BIT}, 
+      #{checkStatus,jdbcType=INTEGER}, #{checkUser,jdbcType=INTEGER}, #{checkTime,jdbcType=TIMESTAMP}, 
+      #{updateUser,jdbcType=INTEGER}, #{updateTime,jdbcType=TIMESTAMP}, #{remarks,jdbcType=VARCHAR},#{isForced,jdbcType=BIT}
+      )
+  </insert>
+  <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id" parameterType="com.trademark.pojo.TrademarkOrder" >
+    insert into k_trademark_order
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="isInvalid != null" >
+        is_invalid,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="user != null" >
+        user,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="proposer != null" >
+        proposer,
+      </if>
+      <if test="trademarkName != null" >
+        trademark_name,
+      </if>
+      <if test="trademarkType != null" >
+        trademark_type,
+      </if>
+      <if test="styleBlack != null" >
+        style_black,
+      </if>
+      <if test="styleColour != null" >
+        style_colour,
+      </if>
+      <if test="explains != null" >
+        explains,
+      </if>
+      <if test="entrust != null" >
+        entrust,
+      </if>
+      <if test="contactPerson != null" >
+        contact_person,
+      </if>
+      <if test="phone != null" >
+        phone,
+      </if>
+      <if test="email != null" >
+        email,
+      </if>
+      <if test="money != null" >
+        money,
+      </if>
+      <if test="payType != null" >
+        pay_type,
+      </if>
+      <if test="isPayment != null" >
+        is_payment,
+      </if>
+      <if test="checkStatus != null" >
+        check_status,
+      </if>
+      <if test="checkUser != null" >
+        check_user,
+      </if>
+      <if test="checkTime != null" >
+        check_time,
+      </if>
+      <if test="updateUser != null" >
+        update_user,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="remarks != null" >
+        remarks,
+      </if>
+     <if test="isForced != null" >
+        is_forced,
+      </if>
+      <if test="tradeNo != null" >
+        trade_no,
+      </if>
+      <if test="outTradeNo != null" >
+       out_trade_no
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="isInvalid != null" >
+        #{isInvalid,jdbcType=BIT},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="user != null" >
+        #{user,jdbcType=INTEGER},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=INTEGER},
+      </if>
+      <if test="proposer != null" >
+        #{proposer,jdbcType=VARCHAR},
+      </if>
+      <if test="trademarkName != null" >
+        #{trademarkName,jdbcType=VARCHAR},
+      </if>
+      <if test="trademarkType != null" >
+        #{trademarkType,jdbcType=INTEGER},
+      </if>
+      <if test="styleBlack != null" >
+        #{styleBlack,jdbcType=VARCHAR},
+      </if>
+      <if test="styleColour != null" >
+        #{styleColour,jdbcType=VARCHAR},
+      </if>
+      <if test="explains != null" >
+        #{explains,jdbcType=VARCHAR},
+      </if>
+      <if test="entrust != null" >
+        #{entrust,jdbcType=VARCHAR},
+      </if>
+      <if test="contactPerson != null" >
+        #{contactPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=INTEGER},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="money != null" >
+        #{money,jdbcType=DOUBLE},
+      </if>
+      <if test="payType != null" >
+        #{payType,jdbcType=INTEGER},
+      </if>
+      <if test="isPayment != null" >
+        #{isPayment,jdbcType=BIT},
+      </if>
+      <if test="checkStatus != null" >
+        #{checkStatus,jdbcType=INTEGER},
+      </if>
+      <if test="checkUser != null" >
+        #{checkUser,jdbcType=INTEGER},
+      </if>
+      <if test="checkTime != null" >
+        #{checkTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null" >
+        #{updateUser,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remarks != null" >
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="isForced != null" >
+       #{isForced,jdbcType=BIT},
+      </if>
+      <if test="tradeNo != null" >
+       #{tradeNo,jdbcType=VARCHAR},
+      </if>
+      <if test="outTradeNo != null" >
+        #{outTradeNo,jdbcType=VARCHAR}
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.trademark.pojo.TrademarkOrder" >
+    update k_trademark_order
+    <set >
+      <if test="isInvalid != null" >
+        is_invalid = #{isInvalid,jdbcType=BIT},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="user != null" >
+        user = #{user,jdbcType=INTEGER},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=INTEGER},
+      </if>
+      <if test="proposer != null" >
+        proposer = #{proposer,jdbcType=VARCHAR},
+      </if>
+      <if test="trademarkName != null" >
+        trademark_name = #{trademarkName,jdbcType=VARCHAR},
+      </if>
+      <if test="trademarkType != null" >
+        trademark_type = #{trademarkType,jdbcType=INTEGER},
+      </if>
+      <if test="styleBlack != null" >
+        style_black = #{styleBlack,jdbcType=VARCHAR},
+      </if>
+      <if test="styleColour != null" >
+        style_colour = #{styleColour,jdbcType=VARCHAR},
+      </if>
+      <if test="explains != null" >
+        explains = #{explains,jdbcType=VARCHAR},
+      </if>
+      <if test="entrust != null" >
+        entrust = #{entrust,jdbcType=VARCHAR},
+      </if>
+      <if test="contactPerson != null" >
+        contact_person = #{contactPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        phone = #{phone,jdbcType=INTEGER},
+      </if>
+      <if test="email != null" >
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="money != null" >
+        money = #{money,jdbcType=DOUBLE},
+      </if>
+      <if test="payType != null" >
+        pay_type = #{payType,jdbcType=INTEGER},
+      </if>
+      <if test="isPayment != null" >
+        is_payment = #{isPayment,jdbcType=BIT},
+      </if>
+      <if test="checkStatus != null" >
+        check_status = #{checkStatus,jdbcType=INTEGER},
+      </if>
+      <if test="checkUser != null" >
+        check_user = #{checkUser,jdbcType=INTEGER},
+      </if>
+      <if test="checkTime != null" >
+        check_time = #{checkTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null" >
+        update_user = #{updateUser,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remarks != null" >
+        remarks = #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="isForced != null" >
+        is_forced = #{isForced,jdbcType=BIT},
+      </if>
+      <if test="tradeNo != null" >
+       trade_no = #{tradeNo,jdbcType=VARCHAR},
+      </if>
+      <if test="outTradeNo != null" >
+       out_trade_no = #{outTradeNo,jdbcType=VARCHAR}
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.trademark.pojo.TrademarkOrder" >
+    update k_trademark_order
+    set is_invalid = #{isInvalid,jdbcType=BIT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      user = #{user,jdbcType=INTEGER},
+      type = #{type,jdbcType=INTEGER},
+      proposer = #{proposer,jdbcType=VARCHAR},
+      trademark_name = #{trademarkName,jdbcType=VARCHAR},
+      trademark_type = #{trademarkType,jdbcType=INTEGER},
+      style_black = #{styleBlack,jdbcType=VARCHAR},
+      style_colour = #{styleColour,jdbcType=VARCHAR},
+      explains = #{explains,jdbcType=VARCHAR},
+      entrust = #{entrust,jdbcType=VARCHAR},
+      contact_person = #{contactPerson,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=INTEGER},
+      email = #{email,jdbcType=VARCHAR},
+      money = #{money,jdbcType=DOUBLE},
+      pay_type = #{payType,jdbcType=INTEGER},
+      is_payment = #{isPayment,jdbcType=BIT},
+      check_status = #{checkStatus,jdbcType=INTEGER},
+      check_user = #{checkUser,jdbcType=INTEGER},
+      check_time = #{checkTime,jdbcType=TIMESTAMP},
+      update_user = #{updateUser,jdbcType=INTEGER},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      remarks = #{remarks,jdbcType=VARCHAR},
+      is_forced = #{isForced,jdbcType=BIT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  
+  <select id="queryTrademarkName" parameterType="map" resultMap="BaseResultMap">
+     select * from k_trademark_order where user=#{user} and  trademark_name like '%${trademarkName}%'
+  </select>
+</mapper>
