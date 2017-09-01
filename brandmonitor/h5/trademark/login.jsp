@@ -57,7 +57,7 @@ body {font-size: 12px;}
 	<!-- nav -->
 	<div class="navigation mt20">
 		<a href="/kk_trademark/h5/trademark/index.jsp"><div id="logo_ename">
-		<span style="color:#ff8416;;font-size: 30px">BrandMonitor</span>
+		<span style="color:#ff8416;;font-size: 30px;margin-left: -60px;">BrandMonitor</span>
 		<!-- <img src="http://yulin-img.oss-cn-shenzhen.aliyuncs.com/web%2Fweb%2Ftrademark%2Flogo.png" width="100" alt="商标注册平台www.tm.cn" title="商标注册平台www.tm.cn"/> -->
 		</div></a>
 		<em></em>
@@ -106,7 +106,7 @@ body {font-size: 12px;}
 
 </div>
 
-<iframe frameborder="0" border="0" width="100%"  src="footer.jsp" ></iframe>
+<iframe frameborder="0" border="0" width="100%"  src="footer.jsp" style="position: absolute;"></iframe>
 </body>
 <script>
 	//键盘事件

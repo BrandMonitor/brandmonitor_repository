@@ -50,7 +50,7 @@
 			<span><a href="/kk_trademark/h5/trademark/search.jsp" class="c_blue">商标查询</a></span>
 			<span>
 				<img style="cursor:auto;width: 20px;" src="http://yulin-img.oss-cn-shenzhen.aliyuncs.com/web%2Fweb%2Ftrademark%2Fconnect_phone.png">
-				<span style="cursor:auto;margin:0 auto;">客服热线：0755-8535-1234</span>
+				<span style="cursor:auto;margin:0 auto;">客服热线：0755-86524997</span>
 			</span>
 		</section>
 	</div>

@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="/kk_trademark/resources/h5/trademark/css/style1.css" />
 </head><!--[if IE]>
 <![endif]-->
-<body>
+<body style="overflow: hidden;">
 <footer>
 	<div style="width: 80%;">
 		<div class="about">
@@ -36,11 +36,11 @@
 			</div>
 		</div>
 		<div class="contact">
-			<section><img style="width: 48px;margin-right: -8px;margin-bottom: -4px;" src="http://yulin-img.oss-cn-shenzhen.aliyuncs.com/web%2Fweb%2Ftrademark%2Fsskb_08.png">0755-8835-1234</section>
+			<section><img style="width: 48px;margin-right: -8px;margin-bottom: -4px;" src="http://yulin-img.oss-cn-shenzhen.aliyuncs.com/web%2Fweb%2Ftrademark%2Fsskb_08.png">0755-86524997</section>
 		</div>
-		<div class="on_record">
+		<!-- <div class="on_record">
 			<section style="font-size: 14px;color:white;">粤ICP备16102380号-1</section>
-		</div>
+		</div> -->
 	</div>
 </footer>
 </body>

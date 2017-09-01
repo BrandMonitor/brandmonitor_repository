@@ -248,9 +248,9 @@
 	        	<div class="footer" style="position:absolute;bottom: 10px;width: 100%;">
 	        		<span>
 						<img style="width: 15px;margin-right: 3px;margin-bottom: -4px;" src="http://yulin-img.oss-cn-shenzhen.aliyuncs.com/web%2Fweb%2Ftrademark%2Fconnect_phone.png">
-						<a>客服热线：0755-8835-1234</a>
+						<a>客服热线：0755-86524997</a>
 					</span>
-					<div class="record">粤ICP备16068193号</div>
+					<!-- <div class="record">粤ICP备16068193号</div> -->
 	        	</div>
 	        </div>
 		</footer>

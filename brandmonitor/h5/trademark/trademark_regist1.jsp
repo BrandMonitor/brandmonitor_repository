@@ -98,7 +98,7 @@ box-shadow: rgb(204, 204, 204) 0px 0px 2px inset, rgb(204, 204, 204) 0px 0px 2px
 			<span><a>帮助中心</a></span>
 			<span>
 				<img style="cursor:auto;width: 20px;" src="http://yulin-img.oss-cn-shenzhen.aliyuncs.com/web%2Fweb%2Ftrademark%2Fconnect_phone.png">
-				<span style="cursor:auto;margin:0 auto;">客服热线：0755-8535-1234</span>
+				<span style="cursor:auto;margin:0 auto;">客服热线：86524997</span>
 			</span>
 		</section>
 	</div>

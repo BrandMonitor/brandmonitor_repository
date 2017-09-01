@@ -25,7 +25,7 @@
 			</div>
 		</div>
 		<div class="contact">
-			<section><img style="width: 48px;margin-right: -8px;margin-bottom: -4px;" src="http://yulin-img.oss-cn-shenzhen.aliyuncs.com/web%2Fweb%2Ftrademark%2Fsskb_08.png">0755-8835-1234</section>
+			<section><img style="width: 48px;margin-right: -8px;margin-bottom: -4px;" src="http://yulin-img.oss-cn-shenzhen.aliyuncs.com/web%2Fweb%2Ftrademark%2Fsskb_08.png">86524997</section>
 		</div>
 		<div class="on_record">
 			<section style="font-size: 14px;color:white;">粤ICP备16102380号-1</section>

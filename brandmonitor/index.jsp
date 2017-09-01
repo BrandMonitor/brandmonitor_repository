@@ -280,7 +280,7 @@
 				<span><a href="/kk_trademark/h5/trademark/search.jsp" style="color:#0f93d8">商标查询</a></span>
 				<span>
 					<img style="cursor:auto;width: 20px;" src="http://yulin-img.oss-cn-shenzhen.aliyuncs.com/web%2Fweb%2Ftrademark%2Fconnect_phone.png">
-					<span style="cursor:auto;margin:0 auto;">客服热线：0755-8535-1234</span>
+					<span style="cursor:auto;margin:0 auto;">客服热线：0755-86524997</span>
 				</span>
 			</section>
 		</div>
@@ -567,11 +567,11 @@
 				</div>
 			</div>
 			<div class="contact">
-				<section><img style="width: 48px;margin-right: -8px;margin-bottom: -4px;" src="http://yulin-img.oss-cn-shenzhen.aliyuncs.com/web%2Fweb%2Ftrademark%2Fsskb_08.png">0755-8835-1234</section>
+				<section><img style="width: 48px;margin-right: -8px;margin-bottom: -4px;" src="http://yulin-img.oss-cn-shenzhen.aliyuncs.com/web%2Fweb%2Ftrademark%2Fsskb_08.png">0755-86524997</section>
 			</div>
-			<div class="on_record">
+			<!-- <div class="on_record">
 				<section style="font-size: 14px;color:white;">粤ICP备16102380号-1</section>
-			</div>
+			</div> -->
 		</div>
 	</footer>
 </body>

@@ -81,14 +81,17 @@ box-shadow: rgb(204, 204, 204) 0px 0px 2px inset, rgb(204, 204, 204) 0px 0px 2px
 				<span><a href="/kk_trademark/h5/trademark/search.jsp">商标查询</a></span>
 				<span>
 					<img style="cursor:auto;width: 20px;" src="http://yulin-img.oss-cn-shenzhen.aliyuncs.com/web%2Fweb%2Ftrademark%2Fconnect_phone.png">
-					<span style="cursor:auto;margin:0 auto;">客服热线：0755-8535-1234</span>
+					<span style="cursor:auto;margin:0 auto;">客服热线：0755-86524997</span>
 				</span>
 			</section>
 		</div>
 	</div>
 	<header class="header clearfix" style="z-index: 9991;">
 		<div class="left" style="position: absolute;">
-			<a href="javascript:void(0);"><img src="http://yulin-img.oss-cn-shenzhen.aliyuncs.com/web%2Fweb%2Ftrademark%2Flogo.png" width="120" alt="商标注册平台www.tm.cn" title="商标注册平台www.tm.cn"/></a>
+			<a href="/">
+			<span style="color:#ff8416;;font-size: 30px">BrandMonitor</span>
+			<!-- <img src="http://yulin-img.oss-cn-shenzhen.aliyuncs.com/web%2Fweb%2Ftrademark%2Flogo.png" width="100" alt="商标注册平台www.tm.cn" title="商标注册平台www.tm.cn"/> -->
+			</a>
 		</div>
 		<div class="right">
 			<ul class="menu">
@@ -194,7 +197,7 @@ box-shadow: rgb(204, 204, 204) 0px 0px 2px inset, rgb(204, 204, 204) 0px 0px 2px
 		</div>
 	</div>
 	
-	<iframe frameborder="0" border="0" width="100%"  src="footer.jsp" ></iframe>
+	<iframe frameborder="0" border="0" width="100%"  src="footer.jsp"  style="position: absolute;"></iframe>
 </body>
 <script src="/kk_trademark/resources/h5/trademark/js/regist.js"></script>
 <!--<script src="/kk_trademark/resources/h5/trademark/js/province_city.js"></script>-->
