@@ -6,9 +6,9 @@
 <meta content="webkit" name="renderer">
 <meta content="IE=edge" http-equiv="X-UA-Compatible">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>免费商标查询，商标在线查询-快快商标</title>
+<title>免费商标查询，商标在线查询-BrandMonitor</title>
 <meta name="keywords" content="商标查询,商标注册查询,已注册商标查询,查询商标,商标在线查询">
-<meta name="description" content="快快商标专为申请人提供商标在线查询，可以按照近似查询，综合查询。还可以通过商品名称进行查询，简单，方便，即刻反馈结果。">
+<meta name="description" content="BrandMonitor专为申请人提供商标在线查询，可以按照近似查询，综合查询。还可以通过商品名称进行查询，简单，方便，即刻反馈结果。">
 <link rel="stylesheet" type="text/css" href="/kk_trademark/resources/h5/trademark/css/style1.css" />
 <script src="http://ajax.microsoft.com/ajax/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="/kk_trademark/resources/h5/trademark/js/is_login.js"></script>
@@ -73,7 +73,7 @@ DD_belatedPNG.fix('.pngfix');
 	</div>
 	<div class="right">
 		<ul class="menu">
-			<li><a href="http://www.kksb.com">首页</a></li>
+			<li><a href="http://test.micro80.com/">首页</a></li>
 			<li><a href="/kk_trademark/h5/trademark/trademark_regist.jsp">商标注册</a></li>
 			<li class="cur"><a href="/kk_trademark/h5/trademark/search.jsp">商标查询</a></li>
 			<li><a href="/kk_trademark/h5/trademark/sort.jsp">商标类别</a></li>

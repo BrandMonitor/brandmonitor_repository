@@ -6,7 +6,7 @@
 <meta http-equiv="cache-control" content="max-age=0" />
 <meta http-equiv="cache-control" content="no-cache" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>快快商标</title>
+<title>BrandMonitor</title>
 <style>
 	html, body {margin: 0;width: 100%;
         height: 100%;font-family: arial;

@@ -10,7 +10,7 @@
 <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="format-detection" content="telephone=no">
 <meta name="keywords" content="商标注册,注册商标,0元注册商标,免费注册商标,免费商标注册,免费商标">
-<meta name="description" content="快快商标专注于商标注册，为您提供商标自行注册，商标代持注册，流程简单，通过率高，0元手续费。">
+<meta name="description" content="BrandMonitor专注于商标注册，为您提供商标自行注册，商标代持注册，流程简单，通过率高，0元手续费。">
 <link rel="stylesheet" type="text/css" href="/kk_trademark/resources/h5/trademark/css/style1.css" />
 <script src="/kk_trademark/resources/h5/trademark/js/jquery-3.1.1.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="/kk_trademark/resources/h5/trademark/js/is_login.js"></script>
@@ -131,7 +131,7 @@ box-shadow: rgb(204, 204, 204) 0px 0px 2px inset, rgb(204, 204, 204) 0px 0px 2px
 	</div>
 	<div class="right">
 		<ul class="menu">
-			<li><a href="http://www.kksb.com">首页</a></li>
+			<li><a href="http://test.micro80.com/">首页</a></li>
 			<li class="cur"><a href="/kk_trademark/h5/trademark/trademark_regist.jsp">商标注册</a></li>
 			<li><a href="/kk_trademark/h5/trademark/search.jsp">商标查询</a></li>
 			<li><a href="/kk_trademark/h5/trademark/sort.jsp">商标类别</a></li>

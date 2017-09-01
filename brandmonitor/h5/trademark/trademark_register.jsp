@@ -3,7 +3,7 @@
 <html lang="zh-cn" class="no-js">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>快快商标</title>
+<title>BrandMonitor</title>
 <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="format-detection" content="telephone=no">
 <link type="text/css" rel="stylesheet"  href="/kk_trademark/resources/h5/trademark/css/register.css">

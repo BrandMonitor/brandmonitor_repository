@@ -92,7 +92,7 @@ box-shadow: rgb(204, 204, 204) 0px 0px 2px inset, rgb(204, 204, 204) 0px 0px 2px
 		</div>
 		<div class="right">
 			<ul class="menu">
-				<li><a href="http://www.kksb.com">首页</a></li>
+				<li><a href="http://test.micro80.com/">首页</a></li>
 				<li><a href="/kk_trademark/h5/trademark/trademark_regist.jsp">商标注册</a></li>
 				<li><a href="/kk_trademark/h5/trademark/search.jsp">商标查询</a></li>
 				<li><a href="/kk_trademark/h5/trademark/sort.jsp">商标类别</a></li>

@@ -6,9 +6,9 @@
 <meta content="webkit" name="renderer">
 <meta content="IE=edge" http-equiv="X-UA-Compatible">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>商标分类查询，商标图形要素查询-快快商标</title>
+<title>商标分类查询，商标图形要素查询-BrandMonitor</title>
 <meta name="keywords" content="商标分类查询,商标图形要素查询,商标查询,查询商标">
-<meta name="description" content="快快商标为您提供商标分类查询，可通过商标分类查询和图形要素查询，省时，省心，快速反馈准确结果。">
+<meta name="description" content="BrandMonitor为您提供商标分类查询，可通过商标分类查询和图形要素查询，省时，省心，快速反馈准确结果。">
 <link rel="stylesheet" type="text/css" href="/kk_trademark/resources/h5/trademark/css/style1.css" />
 <script src="http://ajax.microsoft.com/ajax/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="/kk_trademark/resources/h5/trademark/js/is_login.js"></script>
@@ -52,7 +52,7 @@
 <!-- header -->
 <header class="header clearfix" style="z-index: 9991;">
 	<div class="left">
-		<!--<a href="/"><img src="/images/pic/logo.jpg" height="43" width="125" alt="快快商标" /></a>
+		<!--<a href="/"><img src="/images/pic/logo.jpg" height="43" width="125" alt="BrandMonitor" /></a>
 		<span class="min_logo">    
 			<img src="/images/pic/min_logo.jpg" height="27" width="81" alt="商标注册平台www.tm.cn" />
 		</span>-->   
@@ -64,7 +64,7 @@
 	</div>
 	<div class="right">
 		<ul class="menu">
-			<li><a href="http://www.kksb.com">首页</a></li>
+			<li><a href="http://test.micro80.com/">首页</a></li>
 			<li><a href="/kk_trademark/h5/trademark/trademark_regist.jsp">商标注册</a></li>
 			<li><a href="/kk_trademark/h5/trademark/search.jsp">商标查询</a></li>
 			<li class="cur"><a href="/kk_trademark/h5/trademark/sort.jsp">商标类别</a></li>

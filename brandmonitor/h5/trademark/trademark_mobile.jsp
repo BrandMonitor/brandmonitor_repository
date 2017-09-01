@@ -8,7 +8,7 @@
 <meta http-equiv="cache-control" content="max-age=0" />
 <meta http-equiv="cache-control" content="no-cache" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>快快商标</title>
+<title>BrandMonitor</title>
 <%
 String trademark = new String(request.getParameter("trademark").getBytes("iso8859-1"),"utf-8");
 %>

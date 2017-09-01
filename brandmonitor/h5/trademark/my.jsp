@@ -8,9 +8,9 @@
 <meta content="webkit" name="renderer">
 <meta content="IE=edge" http-equiv="X-UA-Compatible">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>免费商标注册，流程简单，通过率高-快快商标</title>
+<title>免费商标注册，流程简单，通过率高-BrandMonitor</title>
 <meta name="keywords" content="商标注册,注册商标,0元注册商标,免费注册商标,免费商标注册,免费商标">
-<meta name="description" content="快快商标专注于商标注册，为您提供商标自行注册，商标代持注册，流程简单，通过率高，0元手续费。">
+<meta name="description" content="BrandMonitor专注于商标注册，为您提供商标自行注册，商标代持注册，流程简单，通过率高，0元手续费。">
 <link rel="stylesheet" type="text/css" href="/kk_trademark/resources/h5/trademark/css/style1.css" />
 <script src="http://ajax.microsoft.com/ajax/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
 <!--<script src="/js/html5.js?v=1540611" type="text/javascript"></script>

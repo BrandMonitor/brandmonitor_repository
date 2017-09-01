@@ -6,13 +6,13 @@
 <meta content="webkit" name="renderer">
 <meta content="IE=edge" http-equiv="X-UA-Compatible">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>快快商标</title>
+<title>BrandMonitor</title>
 <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7;IE=edge,chrome=1">
 <meta name="renderer" content="webkit">
 
 <meta name="format-detection" content="telephone=no">
-<link rel="shortcut icon" href="http://yulin-img.oss-cn-shenzhen.aliyuncs.com/web%2Fweb%2Ftrademark%2Flogo.png" type="image/x-icon" />
+<link rel="shortcut icon" href="http://yulin-img.oss-cn-shenzhen.aliyuncs.com/web/web/trademark/brand_monitor640-01.png" type="image/x-icon" />
 <link type="text/css" rel="stylesheet"  href="/kk_trademark/resources/h5/trademark/css/style.css" />
 <link type="text/css" rel="stylesheet"  href="/kk_trademark/resources/h5/trademark/css/public_ch.css" />
 <script type="text/javascript" src="/kk_trademark/resources/h5/trademark/js/is_login.js"></script>

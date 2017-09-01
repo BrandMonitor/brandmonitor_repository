@@ -6,7 +6,7 @@
 <meta http-equiv="cache-control" content="max-age=0" />
 <meta http-equiv="cache-control" content="no-cache" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>快快商标</title>
+<title>BrandMonitor</title>
 <style>
 	html, body {margin: 0;width: 100%;
         height: 100%;font-family: arial;
@@ -53,7 +53,7 @@
 <body>
 	<div class="query_header">
 		<div class="header-top">
-		   <a href="http://www.kksb.com" class="back"><span class="icon"></span></a>
+		   <a href="http://test.micro80.com/" class="back"><span class="icon"></span></a>
 		   <h1 class="index_title">商标查询</h1>
 		</div>
 		

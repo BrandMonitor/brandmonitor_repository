@@ -8,7 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>我的商标</title>
 <meta name="keywords" content="商标分类查询,商标图形要素查询,商标查询,查询商标">
-<meta name="description" content="快快商标为您提供商标分类查询，可通过商标分类查询和图形要素查询，省时，省心，快速反馈准确结果。">
+<meta name="description" content="BrandMonitor为您提供商标分类查询，可通过商标分类查询和图形要素查询，省时，省心，快速反馈准确结果。">
 
 <script src="http://ajax.microsoft.com/ajax/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="/kk_trademark/resources/h5/trademark/js/is_login.js"></script>
@@ -119,7 +119,7 @@
 	</div>
 	<div class="right">
 		<ul class="menu">
-			<li><a href="http://www.kksb.com">首页</a></li>
+			<li><a href="http://test.micro80.com/">首页</a></li>
 			<li><a href="/kk_trademark/h5/trademark/trademark_regist.jsp">商标注册</a></li>
 			<li><a href="/kk_trademark/h5/trademark/search.jsp">商标查询</a></li>
 			<li><a href="/kk_trademark/h5/trademark/sort.jsp">商标类别</a></li>
